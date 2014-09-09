@@ -1,0 +1,41 @@
+.list-users {
+	border: 1px solid teal;
+	margin: 0.5em;
+	padding: 0.1em;
+}
+
+.li-users{
+	cursor: pointer;
+	margin: 0.5em;
+	border: 1px solid teal;
+	box-shadow:0.2em 0.2em 0.2em #bbb;
+	padding: 0.5em;
+	height: 1em;
+}
+
+.li-users:HOVER{
+	box-shadow:none;
+}
+
+.operatorChatArea{
+	position: absolute;
+	left: 27.5%;
+	width: 70%;
+	height:95%;
+	margin:2%;
+	top: 0;
+	border: 1px solid teal;
+	padding: 0.1em;
+	overflow:auto;
+}
+
+.operatorChatArea ul li{	
+	display: inline-block;
+}
+
+.operatorChatRoom {
+	border: 1px solid teal;
+	width:12em;
+	height: 20em;
+	margin:1em;
+}

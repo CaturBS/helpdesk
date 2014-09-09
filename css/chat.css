@@ -1,0 +1,108 @@
+.mainChatBox{
+    border-radius: 5px 5px 0 0;
+    background-color: white;
+    border: 1px solid #ad9e8d;
+    position: fixed;
+    width: 250px;
+    bottom: 20px;
+    left: 10px;
+    height: 300px;
+    z-index: 120;
+    box-shadow: 10px 10px 5px #888888;    
+}
+
+.chatDialogDragger {
+    top: 0;
+    width: 95%;
+    left: 2.5%;
+    height: 35px;
+    position: relative;
+    background-color: #44b0f3;
+    background: -moz-linear-gradient(top, #e1edfa 0%, #66d0f6 40%, #dbeaf9 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e1edfa), color-stop(40%,#66d0f6), color-stop(100%,#dbeaf9)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #e1edfa 0%,#66d0f6 40%,#dbeaf9 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #e1edfa 0%,#66d0f6 40%,#dbeaf9 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #e1edfa 0%,#66d0f6 40%,#dbeaf9 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #e1edfa 0%,#66d0f6 40%,#dbeaf9 100%); /* W3C */
+}
+
+
+.smallBox {
+	cursor: pointer;
+	width: 85%;
+	max-width:90%;
+	height:1em;
+    border: 1px solid #555;
+    padding:0.5em;
+    margin:0.25em;
+    margin-left:0.5em;
+    background-color:#fdfeff;
+    box-shadow: 2px 1px 2px #aaf;
+    border-radius: 0.25em;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+.smallBox:ACTIVE {
+    box-shadow: 0 0 0 #aaf;
+    border: 1px solid #66c;
+}
+
+.smallBox:HOVER {
+    box-shadow: 1px 1px 6px #aaf;
+    border: 1px solid #66c;
+}
+
+.dotOnline {
+	position: relative;
+	margin-left: 150px;
+	margin-top: -1.05em;
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: #0d0;
+}
+
+
+.dotOffline {
+	position: relative;
+	margin-left: 150px;
+	margin-top: -1.05em;
+	border-radius: 5px;
+	width: 10px;
+	height: 10px;
+	background-color: #d00;
+}
+
+.balloon {
+  position: relative;
+  padding: 1px;  
+  color: #000;
+  background: #f3961c;
+  border-radius: 2px;
+  background: linear-gradient(top, #f9d835, #f3961c);
+  width: 1.5em;
+  font-size: 0.75em;
+  text-align: center;
+  margin-left: 120px;
+  margin-top: -1.3em;
+  margin-right: 0;
+}
+
+.balloon:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -5px;
+  left: 0.5em;
+  width: 0;
+  border-width: 5px 5px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+}
+
+.operatorChatBrowser {
+	border: 2px solid #357;
+	height: 25em;
+	width: 15em;
+}
