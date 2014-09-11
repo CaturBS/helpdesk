@@ -9,6 +9,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>"/>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/anim.css'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/chat.css'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('js/jquery-ui-1.11.1/jquery-ui.min.css'); ?>"/>
         <script src="<?php echo base_url('js/jquery-1.11.1.min.js');?>"></script>
@@ -25,17 +26,22 @@
 	            }
 	            return "";
 	        }
+
+	    	var site_url = getCookie('site_url').replace(/%3A/g, ":").replace(/%2F/g, "\/");
+	    	var base_url = getCookie('base_url').replace(/%3A/g, ":").replace(/%2F/g, "\/");
+	    	var userName = getCookie('userName');
+	    	
             $(document).ready(function(){
                 $( "#home_button" ).click(function(){
-                    var url = "<?php echo site_url();?>" + "/home";
+                    var url = site_url + "/home";
                     $(location).attr('href',url);
                 });
                 $( "#SKPD_button" ).click(function(){
-                    var url = "<?php echo site_url();?>" + "/home/skpd";
+                    var url = site_url + "/home/skpd";
                     $(location).attr('href',url);
                 });
                 $( "#operator_button" ).click(function(){
-                    var url = "<?php echo site_url();?>" + "/operator";
+                    var url = site_url + "/operator";
                     $(location).attr('href',url);
                 });
 	    		var skpdHover = false;
@@ -106,7 +112,7 @@
                 </div>
             </div>
             <div class="content-content">
-                <div id="skpd-navbar" class="navbar2" hidden>
+                <div id="skpd-navbar" class="navbar2" hidden="true">
 			    	<ul style="display: inline;">
 			    	<?php 
 			    		echo "<li class='navbar2-block'>" . anchor("", "Pendahuluan SKPD") . "</li>";

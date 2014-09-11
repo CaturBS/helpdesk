@@ -31,7 +31,7 @@
         </div>
         <div id="chatContent" class="chatContent"><?php //echo $userLevel;?></div>
 <input id ="chatText" type="text">
-<div id="loading" style="color:#8ac;position: absolute;bottom: 10px;left:10px;z-index: 102;" hidden>loading</div>
+<div id="loading" style="color:#8ac;position: absolute;bottom: 10px;left:10px;z-index: 102;" hidden="true">loading</div>
 <button id="chatButton">send</button>
 <button id="closeButton" style="
 		position: absolute;height: 2em;width: 2em;		

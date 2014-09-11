@@ -1,17 +1,23 @@
 <?php
-	echo "<ul>";
-	echo "<li>" . anchor("operator/chat/", "Chat") . "</li>";
-	echo "<li>" . anchor("operator/", "SMS") . "</li>";
-	echo "<li>" . anchor("operator/", "Index SKPD") . "</li>";
+	echo "<ul class='ul-navbar'>";
+	echo "<li id='li-chat'>Chat</li>";
+	echo "<li id='li-sms'>SMS</li>";
+	echo "<li id='li-skpd'>Ticket</li>";
 	echo "</ul>";
 ?>
+<hr/>
 <script>
-	$("ul").css({
-		"display": "inline-flex"
-	});
-	$("li").css({
-		"display": "block",
-		"text-decoration": "none",
-		"margin-right":"2em"
-	});
+$('head').append('<link rel="stylesheet" href="<?php echo base_url('css/operator.css'); ?>" type="text/css" />');
+$("#li-chat").click(function(){
+    var url = "<?php echo site_url();?>" + "/operator/chat";
+    $(location).attr('href',url);	
+});
+$("#li-sms").click(function(){
+    var url = "<?php echo site_url();?>" + "/operator";
+    $(location).attr('href',url);	
+});
+$("#li-skpd").click(function(){
+    var url = "<?php echo site_url();?>" + "/operator/ticket";
+    $(location).attr('href',url);	
+});
 </script>

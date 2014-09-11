@@ -10,8 +10,8 @@ class Operator extends CI_Controller {
         $this->data['author']="Catur Budi Santoso mail: ctrbudisantoso@gmail.com";
         $this->data['username']="guest";
         $this->data['userlevel']="guest";
-        $this->data['page'] = "";
-        $this->setUserNameData();		
+        $this->data['page'] = "operator";
+        $this->setUserNameData();
 	}
     
 	public function index() {
@@ -25,8 +25,9 @@ class Operator extends CI_Controller {
 	}
 	
 	public function chat() {
-        $this->data['page'] = "chat operator";
+        $this->data['page'] = "operator";
         $this->load->view('templates/header', $this->data);
+        $this->load->view('operator/index', $this->data);
         $this->load->view('operator/chat', $this->data);
         $this->load->view('templates/footer', $this->data);		
 	}
@@ -57,12 +58,40 @@ class Operator extends CI_Controller {
     	}
     	echo json_encode($users_data);
     }
-    
-    public function chatWith($roomID) {
+        
+    public function chatWith($roomID, $chatID) {
     	$data['room_id'] = $roomID;
+    	$data['chat_id'] = $chatID;
     	$operator = $this->session->userdata('username');
         $this->load->view('operator/room', $data);
     	    	
+    }
+    
+    public function showChat($roomID) {
+    	echo json_encode($this->OperatorModel->showChat($roomID));
+    }
+    
+    public function ticket($action="index") {
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('operator/index', $this->data);
+    	if ($action == "index") {
+    		$this->load->view('operator/ticket', $this->data);
+    	} else if ($action == "add") {
+    		$this->data['dataForm'] = array(
+    			"user"=>"",
+    			"tanggal_buka"=>date("Y-m-d"),
+    			"tanggal_tutup"=>"",
+    			"status"=>"buka"
+    		);
+    		$this->data['create_update'] = "create";
+    		$this->load->view('operator/ticket_form', $this->data);
+    	} else if ($action == "update") {
+    	}
+    	$this->load->view('templates/footer', $this->data);
+    }
+    
+    public function list_organisasi_service() {
+    	return json_encode($this->OperatorModel->listNamaOrganisasi());
     }
 }
 ?>

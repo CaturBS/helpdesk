@@ -1,7 +1,13 @@
+.operatorChatBrowser {
+	border: 2px solid #357;
+	height: 22em;
+	width: 15em;
+}
+
 .list-users {
 	border: 1px solid teal;
-	margin: 0.5em;
-	padding: 0.1em;
+	margin: 0.1em;
+	padding: 0em;
 }
 
 .li-users{
@@ -21,9 +27,9 @@
 	position: absolute;
 	left: 27.5%;
 	width: 70%;
-	height:95%;
+	height:80%;
 	margin:2%;
-	top: 0;
+	top: 2em;
 	border: 1px solid teal;
 	padding: 0.1em;
 	overflow:auto;
@@ -35,7 +41,44 @@
 
 .operatorChatRoom {
 	border: 1px solid teal;
-	width:12em;
-	height: 20em;
+	width:10em;
+	height: 14em;
+	margin:0.3em;
+	position: relative;
+}
+
+.closeButton {
+	position: absolute;
+	border: 1px solid blue;
+	width:1.3em;
+	height: 1.3em;
+	padding:0.1em;
+	padding-left:0.5em;
+	border-radius:0.35em;
+	right:0.1em;
+	top:0.1em;
+	cursor: pointer;
+}
+
+.ul-navbar{
+	position: absolute;
+	display: inline-flex;
+	margin-top:-1.5em;
+}
+
+.ul-navbar li{	
+	display: block;
+	text-decoration: none;
 	margin:1em;
+	margin-top:0em;
+	width: 10em;
+	border: 1px solid #abe;
+	cursor: pointer;
+	box-shadow: 0.1em 0.1em 0.1em #8bd; 
+}
+
+
+.ul-navbar li:HOVER{
+	background-color: #f8fbfe;
+	box-shadow: 0.05em 0.05em 0.05em #8bd; 
 }

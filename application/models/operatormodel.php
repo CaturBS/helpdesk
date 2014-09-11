@@ -35,5 +35,16 @@
 	        return $query->result()[0]->unread_messages;
 			
 		}
+		
+		public function showChat($roomID) {
+				
+		}
+		
+		public function listNamaOrganisasi() {
+			$sql = "SELECT nama_organisasi as nama FROM tbl_organisasi;";
+			$query = $this->db->query($sql);
+	        return $query->result();
+		}
+		
 	}
 ?>

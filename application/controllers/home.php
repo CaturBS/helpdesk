@@ -38,9 +38,10 @@ class Home extends CI_Controller {
         $this->load->view('templates/footer', $this->data);
     }
     
-    public function login() {        
+    public function login($prevPage="home") {        
         $this->data['title']="Login Help Desk";
         $this->data['dataLogin'] = NULL;
+        $this->data['prevPage'] = $prevPage;
         if ($this->input->post('username')) {
             $username = $this->input->post('username');
             $password = $this->input->post('password');

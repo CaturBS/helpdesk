@@ -10,10 +10,10 @@ echo "Halaman chat operator";
 <div class="list-users"><div id="list-users" class="ul-users"></div></div>
 <div id="operatorChatArea" class="operatorChatArea"><ul id="ul-OpChatArea"></ul></div>
 <script type="text/javascript">	
-	$('head').append('<link rel="stylesheet" href="<?php echo base_url('css/operator.css'); ?>" type="text/css" />');
+	//$('head').append('<link rel="stylesheet" href="<?php //echo base_url('css/operator.css'); ?>" type="text/css" />');
 	var chatDialogID = 0;
 	function createChatArea(roomID) {
-		var url = 'chatWith\/' + roomID;
+		var url = 'chatWith\/' + roomID + "\/" + chatDialogID;
 		var elementID = "cd_" + chatDialogID;
 		var element = $("<li id=\""+elementID+"\"/>");
 		chatDialogID++;

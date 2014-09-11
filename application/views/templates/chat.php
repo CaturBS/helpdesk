@@ -32,7 +32,7 @@
 	        }
 	    });
         function chatWith(operator) { 
-            var url = '<?php echo site_url() . "/chatBox/chatWithOperator/";?>' + operator + "/";
+            var url = site_url + "/chatBox/chatWithOperator/" + operator + "/";
             //url = "http://localhost";
         	createChatDialog(url);
             /* $("#chatDialogContent").load('<?php// echo site_url() . "/chatBox/chatWithOperator/";?>' +
@@ -41,7 +41,7 @@
         }
         setInterval(function(){
             $.ajax({
-                url:'<?php echo site_url() . "/chatservices/showOperators/";?>'
+                url: site_url + "/chatservices/showOperators/"
             }).done(function(output){                                
                 var obj =  JSON.parse(output);
                 var text = "";
@@ -84,7 +84,7 @@
             }
         });
         function chatWith(user) { 
-            var url = '<?php echo site_url() . "/chatBox/chatWithUser/";?>' + user;
+            var url = site_url + "/chatBox/chatWithUser/" + user;
         	createChatDialog(url);
         }
         
@@ -95,10 +95,9 @@
         function searchUser() {
             
         }
-        
         setInterval(function(){
             $.ajax({
-                url:'<?php echo site_url() . "/chatservices/showUsers/" . $username;?>'
+                url:site_url + "/chatservices/showUsers/" + userName
             }).done(function(output){           
                 var obj =  JSON.parse(output);
                 var text = "";

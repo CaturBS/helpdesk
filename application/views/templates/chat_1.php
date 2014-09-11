@@ -16,10 +16,10 @@
                 </div>
             </div>
         </div>
-        <div id="chatContent" class="chatContent" hidden>      
+        <div id="chatContent" class="chatContent" hidden="true">      
             
         </div>
-        <div id="form-chat" class="form-chat" hidden>
+        <div id="form-chat" class="form-chat" hidden="true">
             <input type="text" id="chatText">
             <button id="chatButton">send</button>
             <button id="exitChat">exit</button>
