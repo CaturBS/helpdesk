@@ -18,7 +18,7 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css
 		<input id="tanggal_tutup" type="text" name="tanggal_buka" value="<?php echo $dataForm['tanggal_tutup'];?>">
 	</div>
 	<div>
-		<label for="status">Tiket sudah selesai</label>
+		<label for="status">Tutup tiket</label>
 		<?php 
 			if ($dataForm['status'] != "tutup") {			
 		?>
@@ -36,8 +36,8 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css
 		?>		
 	</div>
 	<div>
-		<label for="departemen">Departemen</label>
-		<input id="departemen" type="text" name="departemen">
+		<label for="organisasi">Organisasi</label>
+		<input id="organisasi" type="text" name="organisasi">
 	</div>
 	<div>
 		<input type="hidden" name="create-update" value="<?php echo $create_update;?>">
@@ -66,6 +66,16 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css
 			$("#label-status").css("color", "#a33");
 		}
 	});
+	$.ajax({
+		url: site_url + "/operator/list_organisasi_service"
+	}).done(
+		function(output) {
+			var obj = JSON.parse(output);
+			$("#organisasi").autocomplete({
+				source: obj
+			});
+		}
+	);
 		
 </script>
 <?php

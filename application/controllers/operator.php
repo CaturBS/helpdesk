@@ -91,7 +91,12 @@ class Operator extends CI_Controller {
     }
     
     public function list_organisasi_service() {
-    	return json_encode($this->OperatorModel->listNamaOrganisasi());
+    	$array = $this->OperatorModel->listNamaOrganisasi();
+    	$array2 = array();
+    	foreach ($array as $row) {
+    		$array2[] = $row->nama;
+    	}
+    	echo json_encode($array2);
     }
 }
 ?>
