@@ -40,11 +40,14 @@
 				
 		}
 		
-		public function listNamaOrganisasi() {
-			$sql = "SELECT nama_organisasi as nama FROM tbl_organisasi;";
+		public function getSingleColum($columName, $tableName) {
+			$sql = "SELECT " . $columName ." as nama FROM " . $tableName .";";
 			$query = $this->db->query($sql);
-	        return $query->result();
+			return $query->result();
 		}
 		
+		public function addTicket($data) {
+			$this->db->insert("data_ticket", $data);
+		}
 	}
 ?>

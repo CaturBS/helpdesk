@@ -3,7 +3,13 @@
 ?>
 <script>
 $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css'); ?>" type="text/css" />');
+$("#right-explorer-tmp").remove();
 </script>
+<div class="right-explorer">
+<?php 
+	if ($postSent != "add") {
+?>
+<h2>Tambahkan Tiket Baru</h2>
 <form action="" method="post">
 	<div>
 		<label for="user">Nama user</label>
@@ -40,10 +46,23 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css
 		<input id="organisasi" type="text" name="organisasi">
 	</div>
 	<div>
+		<label for="jenis_kasus">Jenis Kasus</label>
+		<input id="jenis_kasus" type="text" name="jenis_kasus">
+	</div>
+	<div>
+		<label for="level_penanganan">Level Penanganan</label>
+		<input id="level_penanganan" type="text" name="level_penanganan">
+	</div>
+	<div>
+		<label for="deskripsi">Deskripsi</label>
+		<input id="deskripsi" type="text" name="deskripsi">
+	</div>
+	<div>
 		<input type="hidden" name="create-update" value="<?php echo $create_update;?>">
-		<input type="submit" value="update">
+		<input type="submit" name="submit" value="<?php echo $formAction;?>">
 	</div>
 </form>
+
 <script>
 	$("#tanggal_buka").datepicker({dateFormat: "yy-mm-dd"});
 	$("#tanggal_tutup").datepicker({dateFormat: "yy-mm-dd"});
@@ -66,17 +85,29 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css
 			$("#label-status").css("color", "#a33");
 		}
 	});
-	$.ajax({
-		url: site_url + "/operator/list_organisasi_service"
-	}).done(
-		function(output) {
-			var obj = JSON.parse(output);
-			$("#organisasi").autocomplete({
-				source: obj
-			});
-		}
-	);
+
+	function populateAutoComplete(serv, elId) {
+
+		$.ajax({
+			url: site_url + "/operator/" + serv
+		}).done(
+			function(output) {
+				var obj = JSON.parse(output);
+				$("#" + elId).autocomplete({
+					source: obj
+				});
+			}
+		);
+	}
+
+	populateAutoComplete("list_organisasi_service", "organisasi");
+	populateAutoComplete("list_jenis_kasus_service", "jenis_kasus");
+	populateAutoComplete("list_level_penanganan_service", "level_penanganan");
 		
 </script>
 <?php
+} else {
+	echo $postSent;
+}
 ?>
+</div>

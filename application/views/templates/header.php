@@ -14,6 +14,8 @@
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('js/jquery-ui-1.11.1/jquery-ui.min.css'); ?>"/>
         <script src="<?php echo base_url('js/jquery-1.11.1.min.js');?>"></script>
         <script src="<?php echo base_url('js/jquery-ui-1.11.1/jquery-ui.min.js');?>"></script>
+        <script src="<?php echo base_url('js/jquery.flot.min.js');?>"></script>
+        <script src="<?php echo base_url('js/jquery.flot.pie.min.js');?>"></script>
         <script type="text/javascript" src="<?php echo base_url('js/interval-management.js'); ?>"></script>
         <script>
 	        function getCookie(cname) {

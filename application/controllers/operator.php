@@ -71,12 +71,24 @@ class Operator extends CI_Controller {
     	echo json_encode($this->OperatorModel->showChat($roomID));
     }
     
+    private function addTicket($dataPost) {
+    	$data = $dataPost;    	
+    	unset($data['submit']);
+    	unset($data['create-update']);
+    	$this->OperatorModel->addTicket($data);
+    }
+    
     public function ticket($action="index") {
         $this->load->view('templates/header', $this->data);
         $this->load->view('operator/index', $this->data);
+    	$this->load->view('operator/ticket', $this->data);
     	if ($action == "index") {
-    		$this->load->view('operator/ticket', $this->data);
     	} else if ($action == "add") {
+    		$this->data['postSent'] = $this->input->post('submit');
+    		$this->data['formAction'] = "add";
+    		if ($this->input->post('submit') == "add") {
+    			$this->addTicket($this->input->post());
+    		}    		
     		$this->data['dataForm'] = array(
     			"user"=>"",
     			"tanggal_buka"=>date("Y-m-d"),
@@ -91,7 +103,25 @@ class Operator extends CI_Controller {
     }
     
     public function list_organisasi_service() {
-    	$array = $this->OperatorModel->listNamaOrganisasi();
+    	$array = $this->OperatorModel->getSingleColum("nama_organisasi", "tbl_organisasi");
+    	$array2 = array();
+    	foreach ($array as $row) {
+    		$array2[] = $row->nama;
+    	}
+    	echo json_encode($array2);
+    }
+    
+    public function list_jenis_kasus_service() {
+    	$array = $this->OperatorModel->getSingleColum("kasus", "jenis_kasus");
+    	$array2 = array();
+    	foreach ($array as $row) {
+    		$array2[] = $row->nama;
+    	}
+    	echo json_encode($array2);    	
+    }
+
+    public function list_level_penanganan_service() {
+    	$array = $this->OperatorModel->getSingleColum("nama", "level_penanganan");
     	$array2 = array();
     	foreach ($array as $row) {
     		$array2[] = $row->nama;

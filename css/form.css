@@ -1,6 +1,20 @@
+form {
+	bottom: 1em;
+	top:0.5em;
+	left: 0.5em;
+	padding:0.5em;
+	width:25em;
+	height:15em;
+	border: 1px solid #8bd;	
+	box-shadow: 0.2em 0.2em 0.2em #468; 
+	color: #420;
+}
 form input {
 	position: absolute;
 	left:15em;
+	border: 1px solid #8bd;	
+	box-shadow: 0.05em 0.05em 0.05em #468;
+	color: #420;
 }
 form div {
 	margin:0.4em;
@@ -11,4 +25,5 @@ form {
 form check {
 	position: absolute;
 	left:15em;
+	width:10em;
 }
