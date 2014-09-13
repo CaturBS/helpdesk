@@ -13,20 +13,26 @@ $("#right-explorer-tmp").remove();
 <form action="" method="post">
 	<div>
 		<label for="user">Nama user</label>
-		<input id="user" name="user" type="text" value="<?php echo $dataForm['user'];?>">
+		<input id="user" name="user" type="text" value="<?php 
+			if ($create_update == "update") {echo $dataForm->user;};
+		?>">
 	</div>
 	<div>
 		<label for="tanggal_buka">Tanggal</label>
-		<input id="tanggal_buka" type="text" name="tanggal_buka" value="<?php echo $dataForm['tanggal_buka'];?>">
+		<input id="tanggal_buka" type="text" name="tanggal_buka" value="<?php 
+			if ($create_update == "update") {echo $dataForm->tanggal_buka;};
+		?>">
 	</div>
 	<div>
 		<label for="tanggal_tutup">Tanggal ditutup</label>
-		<input id="tanggal_tutup" type="text" name="tanggal_buka" value="<?php echo $dataForm['tanggal_tutup'];?>">
+		<input id="tanggal_tutup" type="text" name="tanggal_tutup" value="<?php 
+			if ($create_update == "update") {echo $dataForm->tanggal_tutup;};
+		?>">
 	</div>
 	<div>
 		<label for="status">Tutup tiket</label>
 		<?php 
-			if ($dataForm['status'] != "tutup") {			
+			if ($dataForm->status != "tutup" || $create_update != "update") {			
 		?>
 		<input id="status-cb" type="checkbox">		
 		<input id="status-h" type="hidden" name="status" value="buka">
@@ -43,19 +49,27 @@ $("#right-explorer-tmp").remove();
 	</div>
 	<div>
 		<label for="organisasi">Organisasi</label>
-		<input id="organisasi" type="text" name="organisasi">
+		<input id="organisasi" type="text" name="organisasi" value="<?php 
+			if ($create_update == "update") {echo $dataForm->organisasi;};
+		?>">
 	</div>
 	<div>
 		<label for="jenis_kasus">Jenis Kasus</label>
-		<input id="jenis_kasus" type="text" name="jenis_kasus">
+		<input id="jenis_kasus" type="text" name="jenis_kasus" value="<?php 
+			if ($create_update == "update") {echo $dataForm->jenis_kasus;};
+		?>">
 	</div>
 	<div>
 		<label for="level_penanganan">Level Penanganan</label>
-		<input id="level_penanganan" type="text" name="level_penanganan">
+		<input id="level_penanganan" type="text" name="level_penanganan" value="<?php 
+			if ($create_update == "update") {echo $dataForm->level_penanganan;};
+		?>">
 	</div>
 	<div>
 		<label for="deskripsi">Deskripsi</label>
-		<input id="deskripsi" type="text" name="deskripsi">
+		<input id="deskripsi" type="text" name="deskripsi" value="<?php 
+			if ($create_update == "update") {echo $dataForm->deskripsi;};
+		?>">
 	</div>
 	<div>
 		<input type="hidden" name="create-update" value="<?php echo $create_update;?>">

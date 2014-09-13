@@ -97,7 +97,7 @@
         }
         setInterval(function(){
             $.ajax({
-                url:site_url + "/chatservices/showUsers/" + userName
+                url:site_url + "/chatservices/showUsers/<?php echo $username;?>"
             }).done(function(output){           
                 var obj =  JSON.parse(output);
                 var text = "";

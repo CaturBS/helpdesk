@@ -49,5 +49,22 @@
 		public function addTicket($data) {
 			$this->db->insert("data_ticket", $data);
 		}
+		
+		public function showTicket($limit = -1, $offset="0") {
+			$sql = "SELECT * FROM data_ticket";
+			if ($limit > 0) {
+				$sql = $sql + " LIMIT " + $offset + ", " + $limit + ";";
+			};
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+		
+		public function ticketData($id) {
+			$sql = "SELECT * FROM data_ticket WHERE id = " . $id . ";";
+			$query = $this->db->query($sql);
+			foreach ($query->result() as $row) {
+				return $row;
+			}			
+		}
 	}
 ?>

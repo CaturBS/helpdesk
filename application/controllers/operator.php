@@ -78,10 +78,11 @@ class Operator extends CI_Controller {
     	$this->OperatorModel->addTicket($data);
     }
     
-    public function ticket($action="index") {
+    public function ticket($action="index", $id = -1) {
         $this->load->view('templates/header', $this->data);
         $this->load->view('operator/index', $this->data);
     	$this->load->view('operator/ticket', $this->data);
+    	$this->data['dataForm'] = array();
     	if ($action == "index") {
     	} else if ($action == "add") {
     		$this->data['postSent'] = $this->input->post('submit');
@@ -98,6 +99,11 @@ class Operator extends CI_Controller {
     		$this->data['create_update'] = "create";
     		$this->load->view('operator/ticket_form', $this->data);
     	} else if ($action == "update") {
+    		$this->data['postSent'] = $this->input->post('submit');
+    		$this->data['formAction'] = "update";
+    		$this->data['dataForm'] = $this->OperatorModel->ticketData($id);
+    		$this->data['create_update'] = "update";
+    		$this->load->view('operator/ticket_form', $this->data);
     	}
     	$this->load->view('templates/footer', $this->data);
     }
@@ -128,5 +134,10 @@ class Operator extends CI_Controller {
     	}
     	echo json_encode($array2);
     }
+    
+    public function showTicket($limit = -1, $offset="0") {
+    	$array = $this->OperatorModel->showTicket($limit = -1, $offset="0");
+    	echo json_encode($array);
+    }    
 }
 ?>
