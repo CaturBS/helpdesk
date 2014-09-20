@@ -1,125 +1,73 @@
-<style>
-	.left-explorer {
-		position: absolute;
-		bottom: 1em;
-		top:3em;
-		width:10em;
-		border: 1px solid #8bd;
-	}
-	
-	.left-explorer ul {
-		margin-left: -1em;
-	}
-	.left-explorer ul li{
-		diplay: block;
-		text-decoration: none;
-		border: 1px solid #8bd;
-		list-style-type: none;
-		margin-left: 0;
-		margin-right: 1em;
-		cursor: pointer;
-		color:#b68;
-		font-size: 0.8em;
-	}
-	
-	.left-explorer ul li:HOVER{
-		background-color: #e8ebed;
-	}
-	.left-explorer ul li a{
-		text-decoration: none;
-		width:100%;
-		color:#b68;
-	}
-	
-	.right-explorer {
-		position: absolute;
-		bottom: 1em;
-		top:3em;
-		left: 12.5em;
-		width:50em;
-		border: 1px solid #8bd;	
-	}
-	
-	.exp2 {
-		margin-left:1em;
-	}
-	
-	.ticket-box {
-		cursor: pointer;
-		width: 90%;
-		min-height: 2em;
-		font-size: 0.8em;
-		border: 1px solid #ace;
-		border-radius: 0.35em;
-		margin:2.5%;
-	}
-	.big-button{
-		position: absolute;
-		top:1em;
-		cursor: pointer;
-		box-shadow:0.1em 0.1em 0.1em #8bd;
-		border: 1px solid #abe;
-		width: 20em;
-	    background: -moz-linear-gradient(top, #fff 0%, #efeffe 40%, #fff 100%);
-	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#efeffe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
-	    background: -webkit-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
-	    background: -o-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* Opera 11.10+ */
-	    background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* IE10+ */
-	    background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#fff 100%); /* W3C */
-	}
-	.big-button:HOVER{
-	    background: -moz-linear-gradient(top, #fff 0%, #f8f8fe 40%, #fff 100%);
-	    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#f8f8fe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
-	    background: -webkit-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
-	    background: -o-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* Opera 11.10+ */
-	    background: -ms-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* IE10+ */
-	    background: linear-gradient(to bottom, #fff 0%,#f8f8fe 40%,#fff 100%); /* W3C */
-		box-shadow:0.1em 0.1em 0.1em #db8;
-	}
-	.big-button:ACTIVE {		
-		box-shadow:0.05em 0.05em 0.05em #db8;
-	}
-}
-</style>
+<script>
+$('head').append('<link rel="stylesheet" href="<?php echo base_url('css/ticket.css'); ?>" type="text/css" />');
+</script>
 <div class="left-explorer">
 	<ul>
-		<li id="ticket-li">Tiket</li>
+		<li id="manaj-ticket-li">Manajemen Tiket</li>
+		<li id="rekap-ticket-li">Rekap Tiket</li>
 		<li id="addTicket-li">Tambah Tiket</li>
-		<li> <?php echo anchor("operator/ticket/add", "update");?></li>
 	</ul>
 </div>
 <div id="right-explorer-tmp" class="right-explorer">
-	<div class="big-button" style="left: 1em;">
+	<div id="detail-ticket" class="detail-ticket" hidden="true">
+		<div class="small-button" onclick="$('#detail-ticket').hide();">x</div>
+		<div id="detail-ticket-content"></div>
+	</div>
+	<div id="mt-button" class="big-button" style="left: 1em;">
 		Manajemen Tiket
 	</div>
 	<div id="list-ticket" class="exp2" style="position:absolute; left:0;top:50px;width: 20em;height:300px;border:1px solid #ccd;"></div>	
-	<div class="big-button" style="left: 25em;">
+	<div id="rt-button" class="big-button" style="left: 25em;">
 		Rekap Grafik
 	</div>
-	<div id="placeHolder" style="position:absolute; left:25em;top:50px;width: 20em;height:300px;border:1px solid #ccd;"></div>
+	<div style="position:absolute; left:25em;top:50px;width: 20em;height:300px;border:1px solid #ccd;">
+		<div id="placeHolder" style="position:absolute; width: 100%;height: 100%;"></div>
+	</div>
 </div>
 <script>
+	$("#mt-button").click(function(){
+        var url = site_url + "/operator/ticket/manage";
+        $(location).attr('href',url);
+	});
 
-	$("#ticket-li").click(function(){
-        var url = site_url + "/operator/ticket/";
+	$("#rt-button").click(function(){
+	    var url = site_url + "/operator/rekap_ticket";
+	    $(location).attr('href',url);
+	});
+	$("#manaj-ticket-li").click(function(){
+        var url = site_url + "/operator/ticket/manage";
+        $(location).attr('href',url);
+    });
+	$("#rekap-ticket-li").click(function(){
+        var url = site_url + "/operator/rekap_ticket";
         $(location).attr('href',url);
     });
 	$("#addTicket-li").click(function(){
         var url = site_url + "/operator/ticket/add";
         $(location).attr('href',url);
     });
+
+	$.ajax({
+		url: site_url + "/operator/rekap_ticket_service"
+	}).done(function(dataReceive){
+		var data1 = JSON.parse(dataReceive);
+		//alert(data1[0]["label"]);
+		
+		//alert(JSON.stringify(data));
+		$.plot('#placeHolder', data1, {
+		    series: {
+		        pie: {
+		            show: true
+		        }
+		    }
+		});
+	});
 	var data = [];
-	
 	data[0] = {
-		label: "Dinas",
-		data: 31
+		label: "",
+		data: 100
 	}
-
-
-	data[1] = {
-		label: "Dinas Tata Ruang",
-		data: 3
-	}
+	
 	
 	//alert(JSON.stringify(data));
 	$.plot('#placeHolder', data, {
@@ -135,6 +83,16 @@
 	    }
 	});
 
+	function viewTicket(id) {
+		$("#detail-ticket-content").empty();
+		$("#detail-ticket").show();
+		$("#detail-ticket-content").load(site_url + "/operator/detailTicket/" + id);
+	}
+
+	function editTicket(id) {
+        var url = site_url + "/operator/ticket/update/" + id;
+        $(location).attr('href',url);
+	}
 	var ticketInterval = setInterval(function() {
 		$.ajax({
 			url: site_url + "/operator/showTicket"
@@ -142,25 +100,23 @@
 				var obj = JSON.parse(data);
 				$("#list-ticket").empty();
 				for (i in obj) {
-					var div1 = $("<div id='chat_"+i+"' class='ticket-box'/>");
-					var div2 = $("<div>"+obj[i]['id']+"</div>");
+					var div1 = $("<div id='tb_"+i+"' class='ticket-box'/>");
+					var div2 = $("<div><b>Nama &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:"+obj[i]['user']+"</b></div>");
 					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['user']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['tanggal_buka']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['tanggal_tutup']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['status']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['organisasi']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['jenis_kasus']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['level_penanganan']+"</div>");
-					div1.append(div2);
-					var div2 = $("<div>"+obj[i]['deskripsi']+"</div>");
-					div1.append(div2);
+					var fontColor = "#4f4";
+					if (obj[i]['status'] == "buka") {
+						fontColor = "#f44";
+					}
+					var div3 = $("<div><b>Tanggal &nbsp;:"+obj[i]['tanggal_buka']+"</b></div>");
+					div1.append(div3);
+					var div4 = $("<span style='color:"+fontColor+";'>&nbsp;&nbsp;"+obj[i]['status']+"</span>");
+					div3.append(div4);
+					var div5 = $("<div style='font-size:1.1em;color:#224;'><b>"+obj[i]['organisasi']+"</b></div>");
+					div1.append(div5);
+					var div6 = $("<div onclick='viewTicket(\""+obj[i]['id']+"\");' class='small-button' style='top:1em;'>Detail</div>");
+					div1.append(div6);
+					var div7 = $("<div onclick='editTicket(\""+obj[i]['id']+"\");' class='small-button' style='top:3em;'>Edit</div>");
+					div1.append(div7);
 					$("#list-ticket").append(div1);
 				}
 				});

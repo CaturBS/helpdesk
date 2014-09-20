@@ -1,32 +1,31 @@
 <?php 	
 	setcookie('page', $page);
+	$this->load->helper("url");
 ?>
 <script>
 $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/form.css'); ?>" type="text/css" />');
-$("#right-explorer-tmp").remove();
 </script>
-<div class="right-explorer">
 <?php 
 	if ($postSent == NULL) {
 ?>
-<h2><?php echo (($formAction=="add")?"Tambahkan Tiket Baru":"Edit Tiket"); ?></h2>
-<form action="" method="post">
+<h2>Edit Tiket</h2>
+<form method="post" action="<?php echo site_url("operator/edit_ticket/" . $dataForm->id);?>">
 	<div>
 		<label for="user">Nama user</label>
 		<input id="user" name="user" type="text" value="<?php 
-			if ($create_update == "update") {echo $dataForm->user;};
+			echo $dataForm->user;
 		?>">
 	</div>
 	<div>
 		<label for="tanggal_buka">Tanggal</label>
-		<input id="tanggal_buka" type="text" name="tanggal_buka" value="<?php 
-			if ($create_update == "update") {echo $dataForm->tanggal_buka;};
+		<input id="tanggal_buka" type="text" name="tanggal_buka" value="<?php
+			echo $dataForm->tanggal_buka;
 		?>">
 	</div>
 	<div>
 		<label for="tanggal_tutup">Tanggal ditutup</label>
 		<input id="tanggal_tutup" type="text" name="tanggal_tutup" value="<?php 
-			if ($create_update == "update") {echo $dataForm->tanggal_tutup;};
+			{echo $dataForm->tanggal_tutup;}
 		?>">
 	</div>
 	<div>
@@ -72,9 +71,8 @@ $("#right-explorer-tmp").remove();
 			if ($create_update == "update") {echo $dataForm->deskripsi;};
 		?>">
 	</div>
-	<div>
-		<input type="hidden" name="create-update" value="<?php echo $create_update;?>">
-		<input type="submit" name="submit" value="<?php echo $formAction;?>">
+	<div>		
+		<input type="submit" name="submit" value="update">
 	</div>
 </form>
 
@@ -122,7 +120,6 @@ $("#right-explorer-tmp").remove();
 </script>
 <?php
 } else {
-	echo "Data tiket berhasil ditambahkan";
+	echo $postSent;
 }
 ?>
-</div>

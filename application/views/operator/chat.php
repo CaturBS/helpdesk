@@ -12,8 +12,8 @@ echo "Halaman chat operator";
 <script type="text/javascript">	
 	//$('head').append('<link rel="stylesheet" href="<?php //echo base_url('css/operator.css'); ?>" type="text/css" />');
 	var chatDialogID = 0;
-	function createChatArea(roomID) {
-		var url = 'chatWith\/' + roomID + "\/" + chatDialogID;
+	function createChatArea(roomID, userName) {		
+		var url = 'chatWith\/' + roomID + "\/" + chatDialogID + "\/" + userName;
 		var elementID = "cd_" + chatDialogID;
 		var element = $("<li id=\""+elementID+"\"/>");
 		chatDialogID++;
@@ -29,7 +29,8 @@ echo "Halaman chat operator";
 				$("#list-users").empty();
 				for (i in obj) {
 					var room_id = obj[i].room_id;
-					var element = $("<div class=\"li-users\" onclick=\"createChatArea(\'"+room_id+"\');\"/>");					
+					var userName = obj[i].name;
+					var element = $("<div class=\"li-users\" onclick=\"createChatArea(\'"+room_id+"\', \'"+userName+"\');\"/>");					
 					element.html(obj[i].name);	
 					var element2 = $("<div/>");
 					element2.prop("class", "balloon");

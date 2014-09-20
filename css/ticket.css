@@ -1,0 +1,128 @@
+.left-explorer {
+	position: absolute;
+	bottom: 0.5em;
+	top:3em;
+	width:10em;
+	border: 1px solid #8bd;
+}
+
+.left-explorer ul {
+	margin-left: -1em;
+}
+.left-explorer ul li{
+	diplay: block;
+	text-decoration: none;
+	border: 1px solid #8bd;
+	list-style-type: none;
+	margin-left: 0;
+	margin-right: 1em;
+	cursor: pointer;
+	color:#b68;
+	font-size: 0.8em;
+}
+
+.left-explorer ul li:HOVER{
+	background-color: #e8ebed;
+}
+.left-explorer ul li a{
+	text-decoration: none;
+	width:100%;
+	color:#b68;
+}
+
+.right-explorer {
+	position: absolute;
+	bottom: 0.5em;
+	top:3em;
+	left: 12.5em;
+	width:56em;
+	border: 1px solid #8bd;	
+	height: 87.5%;
+}
+
+.exp2 {
+	margin-left:1em;
+	overflow: auto;
+}
+
+.ticket-box {
+	position: relative;
+	width: 90%;
+	min-height: 2em;
+	font-size: 0.8em;
+	border: 1px solid #ace;
+	border-radius: 0.35em;
+	margin:2.5%;
+	padding:0.5em;
+}
+
+.ticket-box div {
+	margin-bottom:0.2em;
+	}
+.big-button{
+	position: absolute;
+	top:1em;
+	cursor: pointer;
+	box-shadow:0.1em 0.1em 0.1em #8bd;
+	border: 1px solid #abe;
+	width: 20em;
+    background: -moz-linear-gradient(top, #fff 0%, #efeffe 40%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#efeffe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#fff 100%); /* W3C */
+}
+.big-button:HOVER{
+    background: -moz-linear-gradient(top, #efeffe 0%, #efeffe 40%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#efeffe), color-stop(40%,#efeffe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #efeffe 0%,#efeffe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #efeffe 0%,#efeffe 40%,#fff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #efeffe 0%,#efeffe 40%,#fff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #efeffe 0%,#efeffe 40%,#fff 100%); /* W3C */
+	box-shadow:0.1em 0.1em 0.1em #db8;
+}
+.big-button:ACTIVE {		
+	box-shadow:0.05em 0.05em 0.05em #db8;
+}
+
+.small-button {
+	position: absolute;
+	right:1em;
+	cursor: pointer;
+	box-shadow:0.1em 0.1em 0.1em #8bd;
+	border: 1px solid #abe;
+	padding:0.25em;
+    background: -moz-linear-gradient(top, #fff 0%, #efeffe 40%, #efeffe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#efeffe), color-stop(100%,#efeffe)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#efeffe 100%); /* W3C */
+}
+
+.small-button:HOVER {
+    background: -moz-linear-gradient(top, #fff 0%, #f8f8fe 40%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#f8f8fe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#f8f8fe 40%,#fff 100%); /* W3C */
+}
+
+.small-button:ACTIVE {
+	background: #fff;
+	box-shadow:0.05em 0.05em 0.05em #8bd;
+}
+
+.detail-ticket {
+	background-color: #fff;
+	position: fixed;
+	top:2em;
+	width: 25em;
+	max-width: 55em;
+	height: 20em;
+	max-height: 80em;
+	box-shadow:0.05em 0.05em 0.2em #8bd;
+	z-index: 102;
+}

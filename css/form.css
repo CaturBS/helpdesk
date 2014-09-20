@@ -15,12 +15,18 @@ form input {
 	border: 1px solid #8bd;	
 	box-shadow: 0.05em 0.05em 0.05em #468;
 	color: #420;
+	width:17em;
+}
+
+form input[type="textarea"] {
+	height:3em;
 }
 form div {
 	margin:0.4em;
 }
 form {
 	margin:1em;
+	height: 17.5em;
 }
 form check {
 	position: absolute;

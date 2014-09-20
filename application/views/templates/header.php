@@ -68,8 +68,23 @@
         </script>
         <title><?php echo $title;?></title>
     </head>
-    <body>
-    	   	
+    <body>    	
+    <?php if ($userlevel == "operator") {?>
+	    	<div id="addTicketWrapper" 
+		    		style="position:absolute;left:1.5em;top: 15.5em;z-index: 201;
+		    		background-color: white;border: 1px solid #8ac;
+		    		box-shadow: 0.25em 0.25em 0.25em #666;
+		    		border-radius:0.25em;
+	    		">
+	    		<div id="addTicketDragger" style="background-color: #ace;height: 1.25em;cursor: move;"></div>
+	    		<button id="addTicket" style="margin: 0.5em;">Add Ticket</button>    		
+	    	</div>
+	    	<script>
+		    	$("#addTicket").click(function(){
+		    		window.open(site_url + "/operator/add_ticket",  "MsgWindow", "dialog=yes, width=475, height=425");
+	    		});
+	    		$("#addTicketWrapper").draggable();
+	    	</script><?php };?>
         <div id="content" class="content">
             <div class="header">
                 <div style="position: absolute;right: 50px;top: 0;">
@@ -123,4 +138,3 @@
 			    	?>
 			    	</ul>
 		    	</div>
-                

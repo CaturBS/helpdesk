@@ -33,6 +33,18 @@
 <input id ="chatText" type="text">
 <div id="loading" style="color:#8ac;position: absolute;bottom: 10px;left:10px;z-index: 102;" hidden="true">loading</div>
 <button id="chatButton">send</button>
+<?php 
+	if ($userLevel == "operator") {
+?>
+<button id="ticketButton">+tiket</button>
+<script type="text/javascript">
+	$("#ticketButton").click(function(){
+		 window.open(site_url + "/operator/add_ticket",  "MsgWindow", "dialog=yes, width=475, height=425");
+		});
+</script>
+<?php
+};
+?>
 <button id="closeButton" style="
 		position: absolute;height: 2em;width: 2em;		
 		right: 7px;top:2px;">x</button>

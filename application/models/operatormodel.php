@@ -37,7 +37,9 @@
 		}
 		
 		public function showChat($roomID) {
-				
+			$sql = "SELECT * FROM chat_messages WHERE id_chat_room = " . $roomID . " ORDER BY timestamp DESC;";
+			$query = $this->db->query($sql);
+	        return $query->result();
 		}
 		
 		public function getSingleColum($columName, $tableName) {
@@ -50,10 +52,10 @@
 			$this->db->insert("data_ticket", $data);
 		}
 		
-		public function showTicket($limit = -1, $offset="0") {
+		public function showTicket($limit = -1, $offset=0) {
 			$sql = "SELECT * FROM data_ticket";
 			if ($limit > 0) {
-				$sql = $sql + " LIMIT " + $offset + ", " + $limit + ";";
+				$sql = "SELECT * FROM data_ticket limit " . $offset . ", " . $limit . ";";
 			};
 			$query = $this->db->query($sql);
 			return $query->result();
@@ -65,6 +67,44 @@
 			foreach ($query->result() as $row) {
 				return $row;
 			}			
+		}
+		
+		public function editTicket($id, $data) {
+			$this->db->where('id', $id);
+			$this->db->update('data_ticket', $data);
+		}
+		
+		public function ticketCount() {
+			$sql = "SELECT COUNT(*) as ticketCount FROM data_ticket;";
+			$query = $this->db->query($sql);
+			return $query->result()[0]->ticketCount;		
+		}
+		
+		public function rekap_ticket_instansi() {
+			$sql = "SELECT instansi.nama_instansi as label " . 
+					"FROM instansi RIGHT JOIN data_ticket ON " .
+					"instansi.nama_instansi = data_ticket.instansi ORDER BY " .
+					"data_ticket.instansi;";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+		
+		public function rekap_ticket_jenis_kasus() {
+			$sql = "SELECT jenis_kasus.kasus as label " .
+					"FROM jenis_kasus RIGHT JOIN data_ticket ON " .
+					"jenis_kasus.kasus = data_ticket.jenis_kasus ORDER BY " .
+					"data_ticket.jenis_kasus;";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+		
+		public function rekap_ticket_level_penanganan() {
+			$sql = "SELECT level_penanganan.nama as label " .
+					"FROM level_penanganan RIGHT JOIN data_ticket ON " .
+					"level_penanganan.nama = data_ticket.level_penanganan ORDER BY " .
+					"data_ticket.level_penanganan;";
+			$query = $this->db->query($sql);
+			return $query->result();
 		}
 	}
 ?>
