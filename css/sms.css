@@ -1,0 +1,189 @@
+@CHARSET "ISO-8859-1";
+.leftExplorer{
+	border: 1px solid #68a;
+	position: absolute;
+	width:19em;
+	height: 85%;
+	top:10%;
+}
+
+.rightExplorer{
+	border: 1px solid #68a;
+	position: absolute;
+	left:22.5em;
+	width:45em;
+	height: 85%;
+	top:10%;	
+	overflow: auto;	
+}
+
+.ulExplorer {
+	border: 1px solid #9ce;
+	width:14.5em;
+	height:85%;
+	margin-left: 1em;
+	padding:1em;
+	overflow: auto;
+}
+
+.ulExplorer li {
+	position:relative;
+	padding:0.3em;
+	margin:2.5%;
+	margin-left:-2em;
+	display: block;
+	width: 100%;
+	left: 10%;
+	height: 3em;
+	border: 1px solid #ace;
+	font-size:0.9em;
+	border-radius: 0.35em;
+	cursor: pointer;
+	box-shadow: 0.2em 0.2em 0.2em #ace;
+    background: -moz-linear-gradient(top, #fff 0%, #fcfefe 40%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#fcfefe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#fcfefe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#fcfefe 40%,#fff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#fcfefe 40%,#fff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#fcfefe 40%,#fff 100%); /* W3C */
+	user-select: none; 
+}
+
+.ulExplorer li:HOVER {
+}
+
+.ulExplorer .phoneNumberSelected {
+	border: 1px solid #57c;
+	box-shadow: 0.1em 0.1em 0.1em #79a;
+    background: -moz-linear-gradient(top, #fff 0%, #fff 40%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#fff), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#fff 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#fff 40%,#fff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#fff 40%,#fff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#fff 40%,#fff 100%); /* W3C */
+}
+
+.ulDetailsExplorer {
+	position:absolute;
+	top:1em;
+	bottom:1em;
+	width: 20em;
+	left: 2em;
+	border: 1px solid #ace;
+	border-radius: 0.35em;
+	overflow: auto;
+}
+
+.smsMessageFrom {
+	position: relative;
+	margin:0.5em;
+	margin-left:-1em;
+	background-color: #eef8ff;
+	font-size: 0.8em;
+	padding:0.5em;
+	display: block;
+}
+
+.smsMessageTo {
+	position: relative;
+	margin:0.5em;
+	margin-left:-1em;
+	background-color: #ffeef8;
+	font-size: 0.8em;
+	padding:0.5em;
+	display: block;
+}
+
+.smsDate {
+	position: relative;
+	font-size:0.8em;	
+}
+
+.smsDetailTitle {
+	position:relative;
+	display: block;
+	margin:0.5em;
+	margin-left:-1em;
+	background-color: #bbe0f8;
+	font-size: 1em;
+	padding: 0.25em;
+	padding-left: 1.25em;
+}
+
+.sendSMSBox textarea {
+	width: 18em;
+	height: 8em;
+}
+
+.balloon {
+  position: relative;
+  padding: 1px;  
+  color: #000;
+  background: #f3961c;
+  border-radius: 2px;
+  background: linear-gradient(top, #f9d835, #f3961c);
+  width: 1.5em;
+  font-size: 0.75em;
+  text-align: center;
+  margin-left: 120px;
+  margin-top: -1.3em;
+  margin-right: 0;
+}
+
+.balloon:after {
+  content: "";
+  display: block; /* reduce the damage in FF3.0 */
+  position: absolute;
+  bottom: -5px;
+  left: 0.5em;
+  width: 0;
+  border-width: 5px 5px 0;
+  border-style: solid;
+  border-color: #f3961c transparent;
+}
+
+.sendSMSBox{
+	position:absolute;
+	top:5em;
+	bottom:15em;
+	width: 22em;
+	left: 35em;
+	border: 1px solid #ace;
+	font-size:0.75em;
+	border-radius: 0.35em;
+	padding: 1em;
+}
+.smallButton {
+	position: absolute;
+	right:1em;
+	cursor: pointer;
+	box-shadow:0.1em 0.1em 0.1em #8bd;
+	border: 1px solid #abe;
+	padding:0.25em;
+    background: -moz-linear-gradient(top, #fff 0%, #efeffe 40%, #efeffe 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#efeffe), color-stop(100%,#efeffe)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#efeffe 100%); /* W3C */
+	user-select: none; 
+}
+
+.smallButton:HOVER {
+    background: -moz-linear-gradient(top, #fff 0%, #f8f8fe 40%, #fff 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#fff), color-stop(40%,#f8f8fe), color-stop(100%,#fff)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fff 0%,#f8f8fe 40%,#fff 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fff 0%,#f8f8fe 40%,#fff 100%); /* W3C */
+}
+
+.smallButton:ACTIVE {
+	background: #fff;
+	box-shadow:0.05em 0.05em 0.05em #8bd;
+}
+
+.sentReceive{
+	color: #8bf";
+	font-size: 0.75em;
+}

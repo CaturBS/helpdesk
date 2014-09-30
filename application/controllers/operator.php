@@ -6,6 +6,7 @@ class Operator extends CI_Controller {
         $this->load->library('session');
         $this->load->model('UserLoginModel');
         $this->load->model('OperatorModel');
+        $this->load->model('ChatModel');
         $this->load->helper('url');
         $this->data['title']="Administrator - Help Desk";
         $this->data['author']="Catur Budi Santoso mail: ctrbudisantoso@gmail.com";
@@ -40,6 +41,34 @@ class Operator extends CI_Controller {
         };
     }
     
+    public function sms() {
+        $this->data['page'] = "operator";
+        $this->load->view('templates/header', $this->data);
+        $this->load->view('operator/index', $this->data);
+        $this->load->view('operator/sms/index', $this->data);
+        $this->load->view('templates/footer', $this->data);	    	
+    }
+    
+    public function listSMSNumber() {
+    	echo json_encode($this->OperatorModel->listSMSNumber());
+    }    
+    public function listSMSNumberUnread() {
+    	echo json_encode($this->OperatorModel->listSMSNumberUnread());
+    }
+    public function listSMSNumberRead() {
+    	echo json_encode($this->OperatorModel->listSMSNumberRead());
+    }
+    public function listSMSBySender($sender) {
+    	echo json_encode($this->OperatorModel->listSMSBySender($sender));    	
+    }
+    public function readListSMS() {
+    	echo json_encode($this->OperatorModel->readListSMS());
+    }
+    
+    public function readSMS($id) {
+    	echo json_encode($this->OperatorModel->readSMS($id));
+    }
+    
     public function list_user_service() {
     	$users_data = array();
     	$operator = $this->session->userdata('username');
@@ -64,7 +93,7 @@ class Operator extends CI_Controller {
     	$data['room_id'] = $roomID;
     	$data['chat_id'] = $chatID;
     	$data['user'] = $userName;
-    	$operator = $this->session->userdata('username');
+    	$data['username'] = $this->session->userdata('username');
         $this->load->view('operator/room', $data);
     	    	
     }
@@ -202,6 +231,11 @@ class Operator extends CI_Controller {
     
     //web service
     
+
+    public function insertChatMessages($room_id, $sender, $messages, $level="operator") {
+    	$this->ChatModel->insertChatMessages($room_id, $sender, $messages, $level="operator");
+    }
+    
     public function ticketCount() {
     	echo $this->OperatorModel->ticketCount();
     }
@@ -241,6 +275,12 @@ class Operator extends CI_Controller {
     	$data = $this->OperatorModel->ticketData($id);
     	$this->load->view('operator/detail_ticket', $data);
     	//print_r($data);
+    }
+    
+    public function sendSMS() {
+    	$receiverNumber = $this->input->post('receiverNumber');
+    	$message = $this->input->post('message');
+     	$this->OperatorModel->sendSMS($receiverNumber, $message);    	
     }
 }
 ?>

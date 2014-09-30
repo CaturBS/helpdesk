@@ -106,5 +106,54 @@
 			$query = $this->db->query($sql);
 			return $query->result();
 		}
+		
+		public function readListSMS() {
+			$sql = "SELECT * " .
+					"FROM inbox ORDER BY date DESC;";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+		
+		public function readSMS($id) {			
+			$sql = "SELECT * FROM inbox WHERE id = " . $id . ";";
+			$query = $this->db->query($sql);
+			return $query->result();			
+		}	
+
+		public function listSMSNumber() {
+			$sql = "SELECT sender, MAX(date) as last_date, COUNT(*) as count ".
+					" FROM inbox GROUP BY sender ORDER BY MAX(date) DESC;";
+			$query = $this->db->query($sql);
+			return $query->result();	
+		}
+
+		public function listSMSNumberUnread() {
+			$sql = "SELECT sender, MAX(date) as last_date, COUNT(*) as count".
+					" FROM inbox WHERE status = 'unread' GROUP BY sender ORDER BY MAX(date) DESC;";
+			$query = $this->db->query($sql);
+			return $query->result();				
+		}
+		public function listSMSNumberRead($sender) {
+			$sql = "SELECT COUNT(*) as count ".
+					" FROM inbox WHERE status = 'read' GROUP BY sender ORDER BY MAX(date) DESC;";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+
+		public function listSMSBySender($sender) {
+			$sql = "(SELECT sender as sender, text as text, date as date, from_gateway FROM inbox WHERE sender LIKE ".$this->db->escape("%".$sender).") 
+					UNION (SELECT receiver as sender, msg as text, date as date, from_gateway FROM outbox WHERE receiver LIKE ".$this->db->escape("%".$sender).
+					") ORDER BY date DESC;";
+			//$sql = "SELECT * FROM inbox WHERE sender LIKE " . $this->db->escape("%".$sender) . ";";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
+		
+		public function sendSMS($receiverNumber, $message) {
+			$sql = "INSERT INTO `unsent_outbox`(`receiver`, `msg`) VALUES (".$this->db->escape($receiverNumber).", ".
+				$this->db->escape($message).")";
+			$query = $this->db->query($sql);
+			return $query->result();
+		}
 	}
 ?>

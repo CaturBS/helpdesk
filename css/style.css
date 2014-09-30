@@ -125,6 +125,7 @@ button:active {
     margin-top:14px;
     box-shadow: 3px -3px 3px #bbb;
     margin-right: 5px;
+	user-select: none;
 }
 
 .nav-button:hover {    

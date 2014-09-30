@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2014 at 04:53 AM
+-- Generation Time: Sep 12, 2014 at 01:19 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `chat_messages` (
   `message` varchar(250) NOT NULL,
   `id_chat_room` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=318 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=294 ;
 
 --
 -- Dumping data for table `chat_messages`
@@ -329,31 +329,7 @@ INSERT INTO `chat_messages` (`id`, `timestamp`, `sender`, `message`, `id_chat_ro
 (290, '2014-09-11 15:23:45', 'operator_2', 'fdsfsd', 14),
 (291, '2014-09-11 15:23:55', 'catur1', 'i walk a thousand miles', 14),
 (292, '2014-09-11 15:23:57', 'catur1', '??', 14),
-(293, '2014-09-11 15:24:08', 'catur1', 'dfskj', 14),
-(294, '2014-09-17 13:55:59', 'catur1', 'halo', 15),
-(295, '2014-09-17 13:56:14', 'operator_1', 'yo', 15),
-(296, '2014-09-17 14:26:33', 'catur1', 'sad', 15),
-(297, '2014-09-18 02:28:00', 'operator_2', 'halo', 14),
-(298, '2014-09-26 17:53:37', 'operator_1', 'ass', 15),
-(299, '2014-09-26 17:53:53', 'operator_1', 'aa', 15),
-(300, '2014-09-26 17:54:01', 'catur1', 'w', 15),
-(301, '2014-09-29 00:15:33', 'catur1', 'halo', 15),
-(302, '2014-09-29 03:59:38', 'operator_1', 'undefined', 15),
-(303, '2014-09-29 04:00:30', 'operator_1', '', 15),
-(304, '2014-09-29 04:00:40', 'operator_1', 'undefined', 15),
-(305, '2014-09-29 04:01:29', 'operator_1', 'undefined', 15),
-(306, '2014-09-29 04:01:59', 'operator_1', 'tes', 15),
-(307, '2014-09-29 04:13:28', 'operator_1', 'se', 15),
-(308, '2014-09-29 04:14:03', 'operator_1', 'dfsdf', 15),
-(309, '2014-09-29 04:14:10', 'operator_1', 'tes', 15),
-(310, '2014-09-29 04:15:12', 'operator_1', 'ed', 15),
-(311, '2014-09-29 04:15:41', 'catur1', 'tes', 15),
-(312, '2014-09-29 04:16:31', 'catur1', 'tes', 15),
-(313, '2014-09-29 04:16:41', 'catur1', 'when the music over', 15),
-(314, '2014-09-29 08:03:25', 'catur1', 'spend up the light', 15),
-(315, '2014-09-29 08:40:24', 'catur1', 'tom', 15),
-(316, '2014-09-29 08:42:27', 'operator_1', 'tes', 15),
-(317, '2014-09-29 09:03:07', 'operator_1', 'aloo', 15);
+(293, '2014-09-11 15:24:08', 'catur1', 'dfskj', 14);
 
 -- --------------------------------------------------------
 
@@ -383,9 +359,9 @@ INSERT INTO `chat_rooms` (`id`, `start_chat_timestamp`, `last_chat_timestamp`, `
 (7, '2014-08-04 00:00:00', '2014-08-05 00:00:00', 'catur', 'tt', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
 (8, '2014-08-21 16:32:13', '2014-08-21 16:32:13', 'catur4', 'budi', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
 (9, '2014-08-21 16:32:26', '2014-08-21 16:32:26', 'catur', 'dfsfsf', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
-(14, '2014-08-25 10:04:21', '2014-09-18 02:28:00', 'operator_2', 'catur1', '2014-09-18 02:28:00', '2014-09-19 13:04:19', '2014-09-11 15:24:08', '2014-09-18 04:32:58'),
-(15, '2014-08-26 14:03:28', '2014-09-29 09:03:07', 'operator_1', 'catur1', '2014-09-29 09:03:07', '2014-09-29 11:11:12', '2014-09-29 08:40:24', '2014-09-29 22:22:19'),
-(16, '2014-08-27 09:46:06', '2014-09-06 03:07:49', 'operator_1', 'om_cat', '2014-09-06 02:15:03', '2014-09-21 15:59:03', '2014-09-06 03:07:49', '2014-09-09 14:41:12'),
+(14, '2014-08-25 10:04:21', '2014-09-11 15:24:08', 'operator_2', 'catur1', '2014-09-11 15:23:45', '2014-09-11 16:00:28', '2014-09-11 15:24:08', '2014-09-11 15:24:20'),
+(15, '2014-08-26 14:03:28', '2014-09-11 14:36:10', 'operator_1', 'catur1', '2014-09-05 21:09:31', '2014-09-05 21:09:37', '2014-09-11 14:36:10', '2014-09-11 14:36:11'),
+(16, '2014-08-27 09:46:06', '2014-09-06 03:07:49', 'operator_1', 'om_cat', '2014-09-06 02:15:03', '2014-09-06 02:15:05', '2014-09-06 03:07:49', '2014-09-09 14:41:12'),
 (17, '2014-08-27 19:34:16', '2014-09-09 15:46:11', 'operator_2', 'om_cat', '2014-09-09 13:52:00', '2014-09-10 15:35:48', '2014-09-09 15:46:11', '2014-09-09 16:03:49'),
 (18, '2014-08-28 01:23:16', '2014-08-28 01:23:16', 'om_cat', 'operator_2', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
 (19, '2014-08-28 01:23:20', '2014-08-28 01:23:20', 'catur1', 'operator_2', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36');
@@ -413,90 +389,111 @@ CREATE TABLE IF NOT EXISTS `ci_sessions` (
 --
 
 CREATE TABLE IF NOT EXISTS `data_ticket` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL,
   `user` varchar(20) NOT NULL,
   `tanggal_buka` date NOT NULL,
   `tanggal_tutup` date DEFAULT NULL,
   `status` varchar(10) NOT NULL,
-  `instansi` varchar(75) NOT NULL,
+  `organisasi` varchar(40) NOT NULL,
   `jenis_kasus` varchar(40) NOT NULL,
-  `level_penanganan` varchar(100) NOT NULL DEFAULT 'Operator',
-  `deskripsi` varchar(500) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+  `level_penanganan` varchar(100) NOT NULL,
+  `Deskripsi` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `data_ticket`
 --
 
-INSERT INTO `data_ticket` (`id`, `user`, `tanggal_buka`, `tanggal_tutup`, `status`, `instansi`, `jenis_kasus`, `level_penanganan`, `deskripsi`) VALUES
-(7, 'ahmad', '2014-09-13', '0000-00-00', 'buka', 'Dinas Perumahan dan Permukiman', 'Perangkat lunak dan OS', 'Servis Lapangan', 'Kerusakan router karena petir'),
-(8, 'Car', '2014-09-15', '2014-09-21', 'tutup', 'Dinas Kesehatan', 'Perangkat lunak jaringan', 'Admin Jaringan', ' dsf'),
-(9, 'Adi S', '2014-09-15', '0000-00-00', 'buka', 'Dinas Bina Marga', 'Perangkat lunak dan OS', 'Operator', 'Tidak menginstall os yang direkomendasikan'),
-(10, 'Rahmat', '2014-09-17', '0000-00-00', 'buka', 'Badan Kesatuan Bangsa Politik dan Perlindungan Masyarakat', 'Perangkat lunak jaringan', 'Admin Jaringan', 'Salah setting ip'),
-(11, 'Rozak', '2014-09-17', '0000-00-00', 'buka', 'Dinas Pencegah Pemadam Kebakaran', 'Saran', 'Operator', 'Saran tentang tampilan, kontras warna.'),
-(12, 'Dea', '2014-09-17', '2014-09-18', 'tutup', 'Sekretariat DPRD', 'Perangkat lunak jaringan', 'Operator', ''),
-(13, 'Willy Sa', '2014-09-16', '2014-09-17', 'tutup', 'Rumah Sakit Umum Daerah Dr. Pirngadi', 'Perangkat lunak jaringan', 'Admin Jaringan', 'Kesalahan set subnet pada server DHCP lokal dan kesalahan routing static IP'),
-(14, 'Takeshi', '2014-09-17', '0000-00-00', 'buka', 'Dinas Pertamanan', 'Perangkat fisik jaringan', 'Operator', 'Tes'),
-(15, 'Tasaka', '2014-09-17', '2014-09-17', 'tutup', 'Dinas Pendidikan', 'Saran', 'Operator', 'Aplikasi dibwore kan'),
-(16, 'Rahmat Kartolo', '2014-09-17', '2014-09-17', 'tutup', 'Dinas Bina Marga', 'Browser Pengguna', 'Operator', 'Refresh'),
-(17, 'Deani', '2014-09-17', '2014-09-17', 'tutup', 'Dinas Perumahan dan Permukiman', 'Browser Pengguna', 'Operator', 'sua embuh...'),
-(18, 'roger', '2014-09-19', '0000-00-00', 'buka', 'Rumah Sakit Umum Daerah Dr. Pirngadi', 'Perangkat fisik jaringan', 'Servis Lapangan', 'sd'),
-(19, 'ahmad', '2014-09-19', '2014-09-20', 'tutup', 'Dinas Kesehatan', 'Penggunaan Aplikasi', 'Operator', 'selesai');
+INSERT INTO `data_ticket` (`id`, `user`, `tanggal_buka`, `tanggal_tutup`, `status`, `organisasi`, `jenis_kasus`, `level_penanganan`, `Deskripsi`) VALUES
+(0, '', '0000-00-00', NULL, 'buka', '', '', '', ''),
+(0, '', '0000-00-00', NULL, 'buka', '', '', '', ''),
+(0, 'cat', '2014-09-12', NULL, 'tutup', 'Dinas Kesehatan', 'Perangkat lunak dan OS', 'Admin Jaringan', 'dfs');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `inbox`
+-- Table structure for table `jenis_kasus`
 --
 
-CREATE TABLE IF NOT EXISTS `inbox` (
+CREATE TABLE IF NOT EXISTS `jenis_kasus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `sender` varchar(30) NOT NULL,
-  `text` varchar(256) NOT NULL,
-  `date` datetime NOT NULL,
-  `status` varchar(10) NOT NULL DEFAULT 'unread',
-  `from_gateway` int(11) NOT NULL DEFAULT '0',
+  `kasus` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=157 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
--- Dumping data for table `inbox`
+-- Dumping data for table `jenis_kasus`
 --
 
-INSERT INTO `inbox` (`id`, `sender`, `text`, `date`, `status`, `from_gateway`) VALUES
-(140, '+6281260931206', 'Dasar anak nakal tes s gayeway\r\nOK', '2014-09-24 16:05:56', 'unread', 0),
-(143, '+6281260931206', 'Awww\r\n', '2014-09-24 16:20:19', 'unread', 0),
-(144, '+6281260931206', 'Barangkali..\r\n', '2014-09-24 16:20:55', 'unread', 0),
-(145, 'TELKOMSEL', 'Selamat, Anda mendapatkan bonus OprLain sebesar 15SMS. Bonus berlaku berbatas waktu, cek *889# scr berkala. Info: www.telkomsel.com\r\nOK\r\n+CMTI: "SM",', '2014-09-24 16:21:19', 'unread', 0),
-(146, 'TELKOMSEL', 'Selamat, Anda mendapatkan bonus Tsel sebesar 85SMS. Bonus berlaku berbatas waktu, cek *889# scr berkala. Info: www.telkomsel.com\r\n', '2014-09-24 16:21:20', 'unread', 0),
-(151, '+6281260931206', 'Tes<br/>Jkk', '2014-09-24 18:12:51', 'unread', 0),
-(152, '+6282111133448', 'Suehatttt... Tur... Kumaha medan\r\n', '2014-09-24 16:35:09', 'unread', 0),
-(153, '+6285861786388', 'Dt 5', '2014-09-24 15:57:04', 'unread', 0),
-(154, '+6281397750248', 'ok..tks!? sukses', '2014-09-26 17:51:15', 'unread', 0),
-(155, '+6281397750248', 'acem..!)!?', '2014-09-27 17:37:09', 'unread', 0),
-(156, '+6285861786388', 'Loo', '2014-09-28 16:12:23', 'unread', 0);
+INSERT INTO `jenis_kasus` (`id`, `kasus`) VALUES
+(1, 'Perangkat fisik jaringan'),
+(2, 'Perangkat lunak jaringan'),
+(3, 'Perangkat lunak dan OS'),
+(4, 'Kritik'),
+(5, 'Saran');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `instansi`
+-- Table structure for table `level_penanganan`
 --
 
-CREATE TABLE IF NOT EXISTS `instansi` (
+CREATE TABLE IF NOT EXISTS `level_penanganan` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(20) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `level_penanganan`
+--
+
+INSERT INTO `level_penanganan` (`id`, `nama`) VALUES
+(1, 'Operator'),
+(2, 'Teknisi'),
+(3, 'Admin Jaringan'),
+(4, 'Servis Lapangan');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tanggal`
+--
+
+CREATE TABLE IF NOT EXISTS `tanggal` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `tanggal` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `tanggal`
+--
+
+INSERT INTO `tanggal` (`id`, `tanggal`) VALUES
+(1, '2014-08-21 15:31:52'),
+(2, '2014-08-21 15:34:23');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_organisasi`
+--
+
+CREATE TABLE IF NOT EXISTS `tbl_organisasi` (
   `id_unit_organisasi` int(11) NOT NULL,
   `id_urusan` int(11) NOT NULL,
   `id_bidang_urusan` int(11) NOT NULL,
   `id_bidang` int(11) DEFAULT NULL,
   `id_organisasi` int(11) DEFAULT NULL,
-  `nama_instansi` varchar(100) NOT NULL
+  `nama_organisasi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `instansi`
+-- Dumping data for table `tbl_organisasi`
 --
 
-INSERT INTO `instansi` (`id_unit_organisasi`, `id_urusan`, `id_bidang_urusan`, `id_bidang`, `id_organisasi`, `nama_instansi`) VALUES
+INSERT INTO `tbl_organisasi` (`id_unit_organisasi`, `id_urusan`, `id_bidang_urusan`, `id_bidang`, `id_organisasi`, `nama_organisasi`) VALUES
 (104, 1, 1, 4, 1, 'Dinas Pendidikan'),
 (105, 1, 2, 4, 1, 'Dinas Kesehatan'),
 (106, 1, 2, 4, 2, 'Rumah Sakit Umum Daerah Dr. Pirngadi'),
@@ -578,125 +575,6 @@ INSERT INTO `instansi` (`id_unit_organisasi`, `id_urusan`, `id_bidang_urusan`, `
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_kasus`
---
-
-CREATE TABLE IF NOT EXISTS `jenis_kasus` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `kasus` varchar(50) NOT NULL,
-  `priority` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
-
---
--- Dumping data for table `jenis_kasus`
---
-
-INSERT INTO `jenis_kasus` (`id`, `kasus`, `priority`) VALUES
-(1, 'Perangkat fisik jaringan', 1),
-(2, 'Perangkat lunak jaringan', 2),
-(3, 'Browser Pengguna', 3),
-(4, 'Kritik', 5),
-(5, 'Saran', 6),
-(6, 'OS Pengguna', 4),
-(7, 'Penggunaan Aplikasi', 0),
-(8, 'Lainnya', 100);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `level_penanganan`
---
-
-CREATE TABLE IF NOT EXISTS `level_penanganan` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `level_penanganan`
---
-
-INSERT INTO `level_penanganan` (`id`, `nama`) VALUES
-(1, 'Operator'),
-(2, 'Teknisi'),
-(3, 'Admin Jaringan'),
-(4, 'Servis Lapangan');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `outbox`
---
-
-CREATE TABLE IF NOT EXISTS `outbox` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `at_id` int(11) NOT NULL,
-  `receiver` varchar(20) NOT NULL,
-  `msg` varchar(256) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `status` varchar(20) NOT NULL,
-  `from_gateway` int(11) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=14 ;
-
---
--- Dumping data for table `outbox`
---
-
-INSERT INTO `outbox` (`id`, `at_id`, `receiver`, `msg`, `date`, `status`, `from_gateway`) VALUES
-(1, 0, '+6281573179267', 'Halo ma gimana kabar? Ini aku lagi ngetes sms gateway #catur', '2014-09-24 21:13:41', 'sent', 1),
-(2, 0, '+6282111133448', 'baik2 saja.....\r\npingin ke pulau jawa.. jauh.... mahal hehehe', '2014-09-24 21:13:41', 'sent', 1),
-(3, 0, '+6281397750248', 'tes lagi...', '2014-09-27 17:37:25', 'sent', 1),
-(4, 0, '+6282111133448', 'ghgh', '2014-09-27 20:08:51', 'sent', 1),
-(5, 0, '+6281260931206', 'tes lagi', '2014-09-27 20:10:31', 'sent', 1),
-(6, 0, '+6285861786388', 'I''m nervous', '2014-09-27 20:21:09', 'sent', 1),
-(7, 0, '+6285861786388', 'How I do it?', '2014-09-27 21:59:46', 'sent', 1),
-(8, 0, '+6285861786388', 'Can I?', '2014-09-27 21:59:58', 'sent', 1),
-(9, 0, '+6281260931206', 'halo', '2014-09-28 15:57:30', 'sent', 1),
-(10, 0, '6281397750248', 'halo', '2014-09-28 15:58:12', 'sent', 1),
-(11, 0, '6281397750248', 'halo', '2014-09-28 15:58:24', 'sent', 1),
-(12, 0, '+6285861786388', 'halo', '2014-09-28 15:59:39', 'sent', 1),
-(13, 0, '+6285861786388', 'halo 12', '2014-09-28 15:59:54', 'sent', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tanggal`
---
-
-CREATE TABLE IF NOT EXISTS `tanggal` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `tanggal` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
-
---
--- Dumping data for table `tanggal`
---
-
-INSERT INTO `tanggal` (`id`, `tanggal`) VALUES
-(1, '2014-08-21 15:31:52'),
-(2, '2014-08-21 15:34:23');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `unsent_outbox`
---
-
-CREATE TABLE IF NOT EXISTS `unsent_outbox` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `receiver` varchar(20) NOT NULL,
-  `msg` varchar(256) NOT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `user`
 --
 
@@ -708,8 +586,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `level` varchar(20) NOT NULL,
   `email` varchar(30) DEFAULT NULL,
   `last_login` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `name` (`name`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
@@ -718,10 +595,10 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `name`, `full_name`, `password`, `level`, `email`, `last_login`) VALUES
 (1, 'catur', '', 'iKZcU6Vb8BTJzwnpCRL/j1RQ9wm6puhWbALDl1soUwxRoLDX6ChjmRDz3dsNEpiTvVO2uOOZH3n+X7QLPcnH0g==', 'administrator', 'ctrbudisantoso@gmail.com', '2014-08-26 17:36:34'),
-(2, 'catur1', '', '0JrGseGULha6C9xQbhIlGO3TMndGbvdorM5mDA+4SqavSQ+0ESvQcHplZCyRY1kTP35xSoZosmQqZRc5821zVQ==', 'user', 'ctrbudisantoso@gmail.com', '2014-09-29 17:50:21'),
-(3, 'operator_1', '', 'nNmHBQpcO9rsOgAAlsRtcjZj6HUdeKlGuy7eRkWLlfjaU5sqwnHNkLj3e9wcdjhBCSlZNWfc2JqkllwPEf3mfg==', 'operator', 'op@example.com', '2014-09-29 21:42:28'),
-(4, 'operator_2', '', 'RQgA0DftrMtkFPC+oVDkJJ2IcMUnnkdcMT4dym7sexGUBopqXDjnn4V95EaOxUMOVyF/vky+yb7GXG0PgE5afw==', 'operator', 'coperator@os.net', '2014-09-23 21:57:11'),
-(5, 'om_cat', '', 'NFXiJg0v8J7hQaaSovw6ICDssa9Lj+WZMzGjYKz4maiePYjB8RRjPb6bnNaMqWR3DWXzpySUztVZxgwxA0xqTw==', 'user', 'cs@gfg.com', '2014-09-19 07:16:25');
+(2, 'catur1', '', '0JrGseGULha6C9xQbhIlGO3TMndGbvdorM5mDA+4SqavSQ+0ESvQcHplZCyRY1kTP35xSoZosmQqZRc5821zVQ==', 'user', 'ctrbudisantoso@gmail.com', '2014-09-12 11:19:10'),
+(3, 'operator_1', '', 'nNmHBQpcO9rsOgAAlsRtcjZj6HUdeKlGuy7eRkWLlfjaU5sqwnHNkLj3e9wcdjhBCSlZNWfc2JqkllwPEf3mfg==', 'operator', 'op@example.com', '2014-09-12 04:53:22'),
+(4, 'operator_2', '', 'RQgA0DftrMtkFPC+oVDkJJ2IcMUnnkdcMT4dym7sexGUBopqXDjnn4V95EaOxUMOVyF/vky+yb7GXG0PgE5afw==', 'operator', 'coperator@os.net', '2014-09-12 11:19:07'),
+(5, 'om_cat', '', 'NFXiJg0v8J7hQaaSovw6ICDssa9Lj+WZMzGjYKz4maiePYjB8RRjPb6bnNaMqWR3DWXzpySUztVZxgwxA0xqTw==', 'user', 'cs@gfg.com', '2014-09-10 08:20:12');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

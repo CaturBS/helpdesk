@@ -91,16 +91,16 @@ class ChatModel extends CI_Model{
         $this->db->query($sql);
     }
     
-    public function showChatMessages($id_room, $limitHour = 24) {
+    public function showChatMessages($id_room, $limitHour = 480) {
         $sql = "SELECT chat_rooms.admin as admin, chat_rooms.user as user, "
                 . "chat_messages.timestamp as timestamp, chat_messages.sender as sender,"
                 . "chat_messages.message as message "
                 . "FROM `chat_messages` "
                 . "INNER JOIN chat_rooms "
                 . "WHERE "
-                . "(TIMESTAMPDIFF(HOUR,timestamp, NOW()) < " . $limitHour. ") && "
+                . (($limitHour != 480)?("(TIMESTAMPDIFF(HOUR,timestamp, NOW()) < " . $limitHour. ") && "):"")
                 . "(id_chat_room = ".$id_room." ) && "
-                . "(chat_messages.id_chat_room = chat_rooms.id);";
+                . "(chat_messages.id_chat_room = chat_rooms.id) ORDER BY timestamp DESC;";
         $query = $this->db->query($sql);
         return $query->result();
     }

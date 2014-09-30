@@ -29,15 +29,16 @@ setcookie('room_id', $room_id);
 </style>
 <div id="close_button_<?php echo $chat_id;?>" class="closeButton">x</div>
 <input id="text_chat_<?php echo $chat_id;?>" type="text" style="margin: 0.2em;">
+<button id="chatButton_<?php echo $chat_id;?>">kirim</button>
 <div id="op_chat_content_<?php echo $chat_id;?>" class="op_chat_content"></div>
 <script>
 	function setEnvironment() {		
+	    var url1 = ('<?php echo site_url() . "/chatservices/showChatMessages/" . $room_id . "/operator";?>');
 		var interval = setInterval(function(){
 			$.ajax({
-				url:"showChat/<?php echo $room_id?>"
+				url:url1
 			}).done(function(data){
 				var obj = JSON.parse(data);
-				var ocn = {"id":"297","timestamp":"2014-09-18 02:28:00","sender":"operator_2","message":"halo","id_chat_room":"14"};
 				$("#op_chat_content_<?php echo $chat_id;?>").html("");
 				for (i in obj) {					 
 					var msg = $('<div class="msgBlock"></div>');
@@ -52,6 +53,14 @@ setcookie('room_id', $room_id);
 		$("#close_button_<?php echo $chat_id;?>").click(function(){
 			clearInterval(interval);
 			$("#cd_<?php echo $chat_id;?>").remove();
+		});
+		$("#chatButton_<?php echo $chat_id;?>").click(function(){
+			$.ajax({
+				url: site_url+"/operator/insertChatMessages"+"\/<?php echo $room_id;?>"+
+					"\/<?php echo $username;?>\/"+$("#text_chat_<?php echo $chat_id;?>").val()
+				}).done(function(data){
+					$("#text_chat_<?php echo $chat_id;?>").val("");
+					});
 		});
 	}
 	setEnvironment();

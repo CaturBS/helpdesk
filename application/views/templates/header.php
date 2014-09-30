@@ -117,7 +117,7 @@
                         }
                     ?>
                     <div id="home_button" class="<?php echo ($page == "index"? "nav-button-selected":"nav-button");?>">Home</div>
-                    <div id="SKPD_button" class="<?php echo ($page == "SKPD"? "nav-button-selected":"nav-button");?>">SKPD</div>
+                    <div id="SKPD_button" class="<?php echo ($page == "SKPD"? "nav-button-selected":"nav-button");?>" style="width:8em;">Layanan SKPD</div>
                     <div class="nav-button">FAQ</div>
                     <?php                        
                         if ($userlevel == "operator") {
@@ -129,7 +129,7 @@
                 </div>
             </div>
             <div class="content-content">
-                <div id="skpd-navbar" class="navbar2" hidden="true">
+                <div id="skpd-navbar" class="navbar2" hidden="true" style="width:11.6em;">
 			    	<ul style="display: inline;">
 			    	<?php 
 			    		echo "<li class='navbar2-block'>" . anchor("", "Pendahuluan SKPD") . "</li>";
@@ -138,3 +138,6 @@
 			    	?>
 			    	</ul>
 		    	</div>
+					<script type="text/javascript">
+						//$("#skpd-navbar").position({left:$("#SKPD_button").position().left + 200});
+			    	</script>

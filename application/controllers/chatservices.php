@@ -68,7 +68,7 @@ class ChatServices extends CI_Controller{
     }
     
     
-    public function showChatMessages($room_id, $level, $limitHour = 48) {        
+    public function showChatMessages($room_id, $level, $limitHour = 480) {        
         echo json_encode($this->ChatModel->showChatMessages($room_id, $limitHour));
         $this->updateReadMessageTime($room_id, $level);
     }

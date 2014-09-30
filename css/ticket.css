@@ -72,6 +72,7 @@
     background: -o-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#fff 100%); /* IE10+ */
     background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#fff 100%); /* W3C */
+	user-select: none; 
 }
 .big-button:HOVER{
     background: -moz-linear-gradient(top, #efeffe 0%, #efeffe 40%, #fff 100%);
@@ -99,6 +100,7 @@
     background: -o-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* IE10+ */
     background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#efeffe 100%); /* W3C */
+	user-select: none; 
 }
 
 .small-button:HOVER {

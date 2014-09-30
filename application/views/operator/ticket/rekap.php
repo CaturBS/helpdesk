@@ -65,7 +65,7 @@ $("#pieLevelPenanganan").click(function(){
 
 function showChart(url) {
 	$("#placeHolder").empty();
-	$("#imgLoading").show();
+	$("#imgLoading").show();	
 	$.ajax({
 		url: url
 	}).done(function(dataReceive){
@@ -74,9 +74,17 @@ function showChart(url) {
 		$.plot('#placeHolder', data1, {
 		    series: {
 		        pie: {
-		            show: true
+		            show: true,
+				    label: {
+		                show: true,
+		                radius:4/6,
+		                formatter: function(label, series){
+			                return "data =" + series['data'];
+						}
+				    }
 		        }
 		    },
+		    legend: {show:true},
 		    grid: {
 		        hoverable: true,
 		        clickable: true

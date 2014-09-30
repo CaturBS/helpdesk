@@ -13,7 +13,7 @@ $("#li-chat").click(function(){
     $(location).attr('href',url);	
 });
 $("#li-sms").click(function(){
-    var url = "<?php echo site_url();?>" + "/operator";
+    var url = "<?php echo site_url();?>" + "/operator/sms";
     $(location).attr('href',url);	
 });
 $("#li-skpd").click(function(){
