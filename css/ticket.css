@@ -101,6 +101,7 @@
     background: -ms-linear-gradient(top, #fff 0%,#efeffe 40%,#efeffe 100%); /* IE10+ */
     background: linear-gradient(to bottom, #fff 0%,#efeffe 40%,#efeffe 100%); /* W3C */
 	user-select: none; 
+	border-radius:0.25em;
 }
 
 .small-button:HOVER {
@@ -125,6 +126,8 @@
 	max-width: 55em;
 	height: 20em;
 	max-height: 80em;
-	box-shadow:0.05em 0.05em 0.2em #8bd;
+	box-shadow:0.05em 0.05em 0.5em #8bd;
+	padding:1em;
 	z-index: 102;
+	border-radius:0.25em;
 }

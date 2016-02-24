@@ -8,6 +8,9 @@ class Operator extends CI_Controller {
         $this->load->model('OperatorModel');
         $this->load->model('ChatModel');
         $this->load->helper('url');
+        if ($this->session->userdata('userlevel') != "administrator") {
+        	redirect('home/login/operator');
+        }
         $this->data['title']="Administrator - Help Desk";
         $this->data['author']="Catur Budi Santoso mail: ctrbudisantoso@gmail.com";
         $this->data['username']="guest";
@@ -16,7 +19,7 @@ class Operator extends CI_Controller {
         $this->setUserNameData();
 	}
     
-	public function index() {
+	public function index() {		
         $this->data['page'] = "operator";
         $this->load->view('templates/header', $this->data);
         if ($this->session->userdata('userlevel') != "guest") {

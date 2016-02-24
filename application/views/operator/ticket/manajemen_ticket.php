@@ -102,7 +102,7 @@ $("#right-explorer-tmp").remove();
 	function viewTicketDetails(id) {
 		$("#detail-ticket-content").empty();
 		$("#detail-ticket").show();
-		$("#detail-ticket-content").load(site_url + "/operator/detailTicket/" + id);
+		$("#detail-ticket-content").load(site_url + "operator/detailTicket/" + id);
 	}
 	function editTicketDetails(id) {
 		$("#detail-ticket-content").html('');
@@ -112,7 +112,7 @@ $("#right-explorer-tmp").remove();
 			}).done(function(data){
 				$("#detail-ticket-content").html(data);
 				});*/
-		$("#detail-ticket-content").load(site_url + "/operator/edit_ticket/" + id);
+		$("#detail-ticket-content").load(site_url + "operator/edit_ticket/" + id);
 	}
 	var banyakTiket = 0; 
 	var offsetPage = 0;
@@ -120,7 +120,7 @@ $("#right-explorer-tmp").remove();
 		$("#label-explorer").html("Daftar Tiket. &nbsp;&nbsp;" + (offsetPage + 1) + "/" + Math.ceil(banyakTiket/4));
 	}
 	$.ajax({
-		url: site_url + "/operator/ticketCount"
+		url: site_url + "operator/ticketCount"
 		}).done(function(data){
 			banyakTiket = parseInt(data);
 			labelLiExplorer();
@@ -149,7 +149,7 @@ $("#right-explorer-tmp").remove();
 				$("#li-explorer").empty();
 				offsetPage -= 1;
 				$.ajax({
-					url: site_url + "/operator/showTicket/4/" + (offsetPage * 4)
+					url: site_url + "operator/showTicket/4/" + (offsetPage * 4)
 					}).done(function(data){
 						var obj = JSON.parse(data);
 						fetchLiExplorer(obj);
@@ -164,7 +164,7 @@ $("#right-explorer-tmp").remove();
 			$("#loading-li-explorer").show();	
 			$("#li-explorer").empty();
 			$.ajax({
-				url: site_url + "/operator/showTicket/4/" + (offsetPage * 4)
+				url: site_url + "operator/showTicket/4/" + (offsetPage * 4)
 				}).done(function(data){
 					var obj = JSON.parse(data);
 					if (obj.length != 0) {
@@ -176,7 +176,7 @@ $("#right-explorer-tmp").remove();
 		}
 		});
 	$.ajax({
-		url: site_url + "/operator/showTicket/4/0"
+		url: site_url + "operator/showTicket/4/0"
 		}).done(function(data){
 			//var stext = {"id":"7","user":"ahmad","tanggal_buka":"2014-09-13","tanggal_tutup":"0000-00-00","status":"buka","organisasi":"Dinas Perumahan dan Permukiman","jenis_kasus":"Perangkat lunak dan OS","level_penanganan":"Servis Lapangan","deskripsi":"dfssa"};			
 			var obj = JSON.parse(data);

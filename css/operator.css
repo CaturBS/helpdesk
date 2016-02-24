@@ -25,8 +25,8 @@
 
 .operatorChatArea{
 	position: absolute;
-	left: 27.5%;
-	width: 70%;
+	left: 25%;
+	width: 72.5%;
 	height:80%;
 	margin:2%;
 	top: 2em;
@@ -42,8 +42,8 @@
 .closeButton {
 	position: absolute;
 	border: 1px solid blue;
-	width:1.01em;
-	height: 1.01em;
+	width:0.9em;
+	height: 1.2em;
 	padding:0.05em;
 	padding-left:0.4em;
 	border-radius:0.35em;
@@ -51,12 +51,22 @@
 	top:0.1em;
 	cursor: pointer;
 	z-index: 101;
+	box-shadow: 0.1em 0.1em 0.1em #456;
+	background-color: #f0f8ff;
+	user-select: none;
 }
 
+.closeButton:HOVER {
+	background-color: #fdfeff;
+}
+
+.closeButton:ACTIVE {
+	box-shadow:none;
+}
 .ul-navbar{
 	position: absolute;
 	display: inline-flex;
-	margin-top:-1.5em;
+	margin-top:0em;
 }
 
 .ul-navbar li{	

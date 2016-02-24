@@ -25,6 +25,17 @@ class Home extends CI_Controller {
         $this->load->view('templates/footer', $this->data);
     }
     
+    public function tutorial() {
+        $this->data['title']="Help Desk";
+        $this->data['page'] = "tutorial";
+        $this->load->view('templates/header', $this->data);
+        if ($this->session->userdata('userlevel') != "guest") {
+            $this->load->view('templates/chat', $this->data);
+        };
+        $this->load->view('homeview', $this->data);
+        $this->load->view('templates/footer', $this->data);
+    }
+    
     public function skpd($sub=NULL) {
         $this->data['title']="Help Desk";
         $this->data['page'] = "SKPD";

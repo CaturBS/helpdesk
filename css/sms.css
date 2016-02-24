@@ -152,6 +152,7 @@
 	font-size:0.75em;
 	border-radius: 0.35em;
 	padding: 1em;
+	min-height: 14em;
 }
 .smallButton {
 	position: absolute;

@@ -73,7 +73,7 @@ $("#right-explorer-tmp").remove();
 	
 	function populateAutoComplete(serv, elId) {
 		$.ajax({
-			url: site_url + "/operator/" + serv
+			url: site_url + "operator/" + serv
 		}).done(
 			function(output) {
 				var obj = JSON.parse(output);

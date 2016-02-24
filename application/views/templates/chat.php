@@ -10,16 +10,17 @@
 </script>
 <?php
     if ($userlevel == "user") {?>
-    <div id="mainChat" class="mainChatBox">
+    <div id="mainChat" class="mainChatBox" style="height: 35px;">
         <div class="chatDialogDragger">
             Operator
-            <button id="min-button" class="min-button" style="position: absolute;right: 10px;top:5px;">-</button>
+            <button id="min-button" class="min-button" style="position: absolute;right: 10px;top:5px;">+</button>
         </div>
         <div id="wrapper" class="wrapper">
             <div id="admin-status" class="wrapper"></div>
         </div>
     </div>
     <script>
+    	$("#wrapper").hide();
 	    $("#min-button").click(function(){
 	        if($("#min-button").text() == "-") {
 	            $("#mainChat").animate({height:"35px"});
@@ -32,7 +33,7 @@
 	        }
 	    });
         function chatWith(operator) { 
-            var url = site_url + "/chatBox/chatWithOperator/" + operator + "/";
+            var url = site_url + "chatBox/chatWithOperator/" + operator + "/";
             //url = "http://localhost";
         	createChatDialog(url);
             /* $("#chatDialogContent").load('<?php// echo site_url() . "/chatBox/chatWithOperator/";?>' +
@@ -41,7 +42,7 @@
         }
         setInterval(function(){
             $.ajax({
-                url: site_url + "/chatservices/showOperators/"
+                url: site_url + "chatservices/showOperators/"
             }).done(function(output){                                
                 var obj =  JSON.parse(output);
                 var text = "";
@@ -62,16 +63,17 @@
 
     <?php
     } else if ($userlevel == "operator") {?>
-    <div id="mainChat" class="mainChatBox">
+    <div id="mainChat" class="mainChatBox" style="height: 35px;">
         <div class="chatDialogDragger">
             Daftar User
-            <button id="min-button" class="min-button" style="position: absolute;right: 10px;top:5px;">-</button>
+            <button id="min-button" class="min-button" style="position: absolute;right: 10px;top:5px;">+</button>
         </div>
         <div class="wrapper">
             <div id="admin-status"></div>
         </div>
     </div>
     <script>
+    	$("#wrapper").hide();
         $("#min-button").click(function(){
             if($("#min-button").text() == "-") {
                 $("#mainChat").animate({height:"35px"});
@@ -84,7 +86,7 @@
             }
         });
         function chatWith(user) { 
-            var url = site_url + "/chatBox/chatWithUser/" + user;
+            var url = site_url + "chatBox/chatWithUser/" + user;
         	createChatDialog(url);
         }
         
@@ -97,7 +99,7 @@
         }
         setInterval(function(){
             $.ajax({
-                url:site_url + "/chatservices/showUsers/<?php echo $username;?>"
+                url:site_url + "chatservices/showUsers/<?php echo $username;?>"
             }).done(function(output){           
                 var obj =  JSON.parse(output);
                 var text = "";

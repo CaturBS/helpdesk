@@ -87,7 +87,7 @@
         var checked = $("#"+autoScrollID).is(':checked');
         setAutoScroll(checked);
     });*/
-    var url1 = ('<?php echo site_url() . "/chatservices/showChatMessages/" . $room_id . "/" . $userLevel;?>');    
+    var url1 = ('<?php echo site_url() . "chatservices/showChatMessages/" . $room_id . "/" . $userLevel;?>');
     var interval1 = setInterval(function(){
         $.ajax({
             url:url1
@@ -109,7 +109,7 @@
     $("#" + chatButtonID).click(function(){
         $("#" + loadingID).show("fast");
         $.ajax({
-            url:"<?php echo site_url() . "/chatservices/insertChatMessages/" . $sender . "/";?>"
+            url:"<?php echo site_url() . "chatservices/insertChatMessages/" . $sender . "/";?>"
                   + convertSpecialChar($("#" + chatTextID).val().toString())
                   + '/<?php echo $room_id . "/" . $userLevel;?>'
         }).done(function(data){
@@ -121,7 +121,7 @@
 		if (event.which == 13) {
 			$("#" + loadingID).show("fast");
 			$.ajax({
-	            url:"<?php echo site_url() . "/chatservices/insertChatMessages/" . $sender . "/";?>"
+	            url:"<?php echo site_url() . "chatservices/insertChatMessages/" . $sender . "/";?>"
 	                  + convertSpecialChar($("#" + chatTextID).val().toString())
 	                  + '/<?php echo $room_id . "/" . $userLevel;?>'
 	        }).done(function(data){

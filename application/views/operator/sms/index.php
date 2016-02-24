@@ -16,7 +16,7 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/sms.css'
 </div>
 <script type="text/javascript">
 	$("#sendButton").click(function(){
-		$.post(site_url+"/operator/sendSMS",{
+		$.post(site_url+"operator/sendSMS",{
 				receiverNumber:$("#sendNumber").val(),
 				message:$("#sendMessage").val()
 			}, function(data,status){
@@ -29,7 +29,7 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/sms.css'
 	var firstRead = false;
 	function smsList(){
 		$.ajax({
-			url: site_url + '/operator/listSMSNumber'
+			url: site_url + 'operator/listSMSNumber'
 		}).done(function(data){
 			$("#smsUL").empty();
 			var obj = JSON.parse(data);
@@ -74,7 +74,7 @@ $('head').append('<link rel="stylesheet" href="<?php echo base_url('css/sms.css'
 		$("#smsUL li").removeClass("phoneNumberSelected");
 		$("#"+numb).addClass("phoneNumberSelected");		
 		$.ajax({
-			url: site_url + '/operator/listSMSBySender/' + sender
+			url: site_url + 'operator/listSMSBySender/' + sender
 			}).done(function(data){
 				$("#smsDetailsUL").empty();
 				var obj = JSON.parse(data);

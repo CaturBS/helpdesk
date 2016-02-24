@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 30, 2014 at 04:53 AM
+-- Generation Time: Oct 23, 2014 at 12:53 PM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.11
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `chat_messages` (
   `message` varchar(250) NOT NULL,
   `id_chat_room` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=318 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=329 ;
 
 --
 -- Dumping data for table `chat_messages`
@@ -353,7 +353,18 @@ INSERT INTO `chat_messages` (`id`, `timestamp`, `sender`, `message`, `id_chat_ro
 (314, '2014-09-29 08:03:25', 'catur1', 'spend up the light', 15),
 (315, '2014-09-29 08:40:24', 'catur1', 'tom', 15),
 (316, '2014-09-29 08:42:27', 'operator_1', 'tes', 15),
-(317, '2014-09-29 09:03:07', 'operator_1', 'aloo', 15);
+(317, '2014-09-29 09:03:07', 'operator_1', 'aloo', 15),
+(318, '2014-09-30 17:41:46', 'catur1', 'alo', 15),
+(319, '2014-09-30 17:41:50', 'catur1', 'new', 15),
+(320, '2014-09-30 17:43:29', 'operator_1', 'lo', 15),
+(321, '2014-09-30 18:10:39', 'catur1', 'here we are love on the end', 15),
+(322, '2014-09-30 18:10:47', 'catur1', 'century of beauty and lose', 15),
+(323, '2014-10-01 02:13:28', 'catur1', 'haf', 15),
+(324, '2014-10-01 02:15:55', 'catur1', 'fds', 15),
+(325, '2014-10-01 17:59:06', 'i%20meet%20a', '', 15),
+(326, '2014-10-01 21:53:26', 'catur1', 'halo', 15),
+(327, '2014-10-01 21:53:45', 'operator_1', 'yo', 15),
+(328, '2014-10-10 10:54:41', 'catur1', 'ha', 15);
 
 -- --------------------------------------------------------
 
@@ -367,10 +378,10 @@ CREATE TABLE IF NOT EXISTS `chat_rooms` (
   `last_chat_timestamp` datetime NOT NULL,
   `admin` varchar(20) NOT NULL,
   `user` varchar(20) NOT NULL,
-  `last_op_message` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_op_read` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_user_message` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_user_read` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `last_op_message` datetime NOT NULL,
+  `last_op_read` datetime NOT NULL,
+  `last_user_message` datetime NOT NULL,
+  `last_user_read` datetime NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
 
@@ -384,9 +395,9 @@ INSERT INTO `chat_rooms` (`id`, `start_chat_timestamp`, `last_chat_timestamp`, `
 (8, '2014-08-21 16:32:13', '2014-08-21 16:32:13', 'catur4', 'budi', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
 (9, '2014-08-21 16:32:26', '2014-08-21 16:32:26', 'catur', 'dfsfsf', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
 (14, '2014-08-25 10:04:21', '2014-09-18 02:28:00', 'operator_2', 'catur1', '2014-09-18 02:28:00', '2014-09-19 13:04:19', '2014-09-11 15:24:08', '2014-09-18 04:32:58'),
-(15, '2014-08-26 14:03:28', '2014-09-29 09:03:07', 'operator_1', 'catur1', '2014-09-29 09:03:07', '2014-09-29 11:11:12', '2014-09-29 08:40:24', '2014-09-29 22:22:19'),
-(16, '2014-08-27 09:46:06', '2014-09-06 03:07:49', 'operator_1', 'om_cat', '2014-09-06 02:15:03', '2014-09-21 15:59:03', '2014-09-06 03:07:49', '2014-09-09 14:41:12'),
-(17, '2014-08-27 19:34:16', '2014-09-09 15:46:11', 'operator_2', 'om_cat', '2014-09-09 13:52:00', '2014-09-10 15:35:48', '2014-09-09 15:46:11', '2014-09-09 16:03:49'),
+(15, '2014-08-26 14:03:28', '2014-10-10 10:54:41', 'operator_1', 'catur1', '2014-10-01 21:53:45', '2014-10-11 13:09:37', '2014-10-10 10:54:41', '2014-10-11 12:57:39'),
+(16, '2014-08-27 09:46:06', '2014-09-06 03:07:49', 'operator_1', 'om_cat', '2014-09-06 02:15:03', '2014-10-11 13:08:45', '2014-09-06 03:07:49', '2014-09-09 14:41:12'),
+(17, '2014-08-27 19:34:16', '2014-09-09 15:46:11', 'operator_2', 'om_cat', '2014-09-09 13:52:00', '2014-10-01 18:53:48', '2014-09-09 15:46:11', '2014-09-09 16:03:49'),
 (18, '2014-08-28 01:23:16', '2014-08-28 01:23:16', 'om_cat', 'operator_2', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36'),
 (19, '2014-08-28 01:23:20', '2014-08-28 01:23:20', 'catur1', 'operator_2', '2014-09-03 17:33:49', '2014-09-03 17:33:49', '2014-09-03 17:34:36', '2014-09-03 17:34:36');
 
@@ -423,7 +434,7 @@ CREATE TABLE IF NOT EXISTS `data_ticket` (
   `level_penanganan` varchar(100) NOT NULL DEFAULT 'Operator',
   `deskripsi` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=20 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=21 ;
 
 --
 -- Dumping data for table `data_ticket`
@@ -442,7 +453,8 @@ INSERT INTO `data_ticket` (`id`, `user`, `tanggal_buka`, `tanggal_tutup`, `statu
 (16, 'Rahmat Kartolo', '2014-09-17', '2014-09-17', 'tutup', 'Dinas Bina Marga', 'Browser Pengguna', 'Operator', 'Refresh'),
 (17, 'Deani', '2014-09-17', '2014-09-17', 'tutup', 'Dinas Perumahan dan Permukiman', 'Browser Pengguna', 'Operator', 'sua embuh...'),
 (18, 'roger', '2014-09-19', '0000-00-00', 'buka', 'Rumah Sakit Umum Daerah Dr. Pirngadi', 'Perangkat fisik jaringan', 'Servis Lapangan', 'sd'),
-(19, 'ahmad', '2014-09-19', '2014-09-20', 'tutup', 'Dinas Kesehatan', 'Penggunaan Aplikasi', 'Operator', 'selesai');
+(19, 'ahmad', '2014-09-19', '2014-09-20', 'tutup', 'Dinas Kesehatan', 'Penggunaan Aplikasi', 'Operator', 'selesai'),
+(20, 'ahmad sas', '2014-10-03', '0000-00-00', 'buka', 'Dinas Pendidikan', 'Perangkat lunak jaringan', 'Servis Lapangan', 'sd');
 
 -- --------------------------------------------------------
 
@@ -635,7 +647,7 @@ CREATE TABLE IF NOT EXISTS `outbox` (
   `at_id` int(11) NOT NULL,
   `receiver` varchar(20) NOT NULL,
   `msg` varchar(256) NOT NULL,
-  `date` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `date` datetime NOT NULL,
   `status` varchar(20) NOT NULL,
   `from_gateway` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
@@ -707,7 +719,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   `password` text NOT NULL,
   `level` varchar(20) NOT NULL,
   `email` varchar(30) DEFAULT NULL,
-  `last_login` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `last_login` timestamp NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
@@ -718,8 +730,8 @@ CREATE TABLE IF NOT EXISTS `user` (
 
 INSERT INTO `user` (`id`, `name`, `full_name`, `password`, `level`, `email`, `last_login`) VALUES
 (1, 'catur', '', 'iKZcU6Vb8BTJzwnpCRL/j1RQ9wm6puhWbALDl1soUwxRoLDX6ChjmRDz3dsNEpiTvVO2uOOZH3n+X7QLPcnH0g==', 'administrator', 'ctrbudisantoso@gmail.com', '2014-08-26 17:36:34'),
-(2, 'catur1', '', '0JrGseGULha6C9xQbhIlGO3TMndGbvdorM5mDA+4SqavSQ+0ESvQcHplZCyRY1kTP35xSoZosmQqZRc5821zVQ==', 'user', 'ctrbudisantoso@gmail.com', '2014-09-29 17:50:21'),
-(3, 'operator_1', '', 'nNmHBQpcO9rsOgAAlsRtcjZj6HUdeKlGuy7eRkWLlfjaU5sqwnHNkLj3e9wcdjhBCSlZNWfc2JqkllwPEf3mfg==', 'operator', 'op@example.com', '2014-09-29 21:42:28'),
+(2, 'catur1', '', '0JrGseGULha6C9xQbhIlGO3TMndGbvdorM5mDA+4SqavSQ+0ESvQcHplZCyRY1kTP35xSoZosmQqZRc5821zVQ==', 'user', 'ctrbudisantoso@gmail.com', '2014-10-11 06:06:44'),
+(3, 'operator_1', '', 'nNmHBQpcO9rsOgAAlsRtcjZj6HUdeKlGuy7eRkWLlfjaU5sqwnHNkLj3e9wcdjhBCSlZNWfc2JqkllwPEf3mfg==', 'operator', 'op@example.com', '2014-10-18 21:56:30'),
 (4, 'operator_2', '', 'RQgA0DftrMtkFPC+oVDkJJ2IcMUnnkdcMT4dym7sexGUBopqXDjnn4V95EaOxUMOVyF/vky+yb7GXG0PgE5afw==', 'operator', 'coperator@os.net', '2014-09-23 21:57:11'),
 (5, 'om_cat', '', 'NFXiJg0v8J7hQaaSovw6ICDssa9Lj+WZMzGjYKz4maiePYjB8RRjPb6bnNaMqWR3DWXzpySUztVZxgwxA0xqTw==', 'user', 'cs@gfg.com', '2014-09-19 07:16:25');
 
