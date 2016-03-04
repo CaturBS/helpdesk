@@ -1,28 +1,15 @@
 <?php
-class Home extends CI_Controller {
-    private $data = null;
-    public function __construct() {
-        parent::__construct();
-        $this->load->library('session');
-        $this->load->model('UserLoginModel');
-        $this->load->helper('url');
-        $this->data['title']="Help Desk";
-        $this->data['author']="Catur Budi Santoso mail: ctrbudisantoso@gmail.com";
-        $this->data['username']="guest";
-        $this->data['userlevel']="guest";
-        $this->data['page'] = "";
-        $this->setUserNameData();   
-    }
+defined('BASEPATH') OR exit('No direct script access allowed');
+class Home extends Help_Desk_Controller {
     
     public function index() {
         $this->data['title']="Help Desk";
         $this->data['page'] = "index";
-        $this->load->view('templates/header', $this->data);
-        if ($this->session->userdata('userlevel') != "guest") {
-            $this->load->view('templates/chat', $this->data);
-        };
-        $this->load->view('homeview', $this->data);
-        $this->load->view('templates/footer', $this->data);
+        $this->loadView('homeview', array('guest','member','operator','administrator'));
+    }
+    
+    public function chat() {
+    	$this->load->view('chat/chat_update');
     }
     
     public function tutorial() {
@@ -80,13 +67,6 @@ class Home extends CI_Controller {
         $this->load->view('templates/header', $this->data);        
         $this->load->view('homeview', $this->data);
         $this->load->view('templates/footer', $this->data);            
-    }
-    
-    private function setUserNameData() {
-        if ($this->session->userdata('username')) {
-            $this->data['username']=$this->session->userdata('username');
-            $this->data['userlevel']=$this->session->userdata('userlevel');            
-        };
     }
     
 }

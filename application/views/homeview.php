@@ -6,8 +6,8 @@
 	}
 </script>
 <div>
-	Help desk Sistem Keputusan Perencanaan Daerah
+	Help desk Sistem Keputusan Perencanaan Daerah dan Jaringan WAN Pemerintah Kota Medan
 </div>
 	<img alt="" src="<?php echo site_url('images/tutorial.png');?>" class="icon tutorialIcon" onclick="redrct('tutorial');">
-	<img alt="" src="<?php echo site_url('images/skpd.png');?>" class="icon chatIcon" onclick="redrct('skpd');">
+	<img alt="" src="<?php echo site_url('images/communication.png');?>" class="icon chatIcon" onclick="redrct('komunikasi');">
 	

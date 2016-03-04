@@ -12,10 +12,11 @@
 }
 
 .chatDialogDragger {
-    top: 0;
-    width: 95%;
-    left: 2.5%;
-    height: 35px;
+	border-radius: 5px 5px 0 0;
+    top: 0.5px;
+    width: 99%;
+    left: 0.5%;
+    height: 34px;
     position: relative;
     background-color: #44b0f3;
     background: -moz-linear-gradient(top, #e1edfa 0%, #66d0f6 40%, #dbeaf9 100%);

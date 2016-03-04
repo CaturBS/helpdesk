@@ -11,10 +11,15 @@
     $this->input->set_cookie('userLevel', $userlevel);
     $this->input->set_cookie('site_url', site_url());
     $this->input->set_cookie('base_url', base_url());
+    
+    function navigasiBar() {
+    	
+    }
 ?>
 <!doctype=html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="<?php echo base_url('bootstrap/css/bootstrap.min.css'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/style.css'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/anim.css'); ?>"/>
         <link rel="stylesheet" type="text/css" href="<?php echo base_url('css/chat.css'); ?>"/>
@@ -40,14 +45,13 @@
 
 	    	var site_url = "<?php echo site_url();?>";//getCookie('site_url').replace(/%3A/g, ":").replace(/%2F/g, "\/");
 	    	var base_url = "<?php echo base_url();?>";//getCookie('base_url').replace(/%3A/g, ":").replace(/%2F/g, "\/");
-            
+
+            function navTo() {
+                //
+            }
             $(document).ready(function(){
                 $( "#home_button" ).click(function(){
                     var url = site_url + "home";
-                    $(location).attr('href',url);
-                });
-                $( "#SKPD_button" ).click(function(){
-                    var url = site_url + "skpd";
                     $(location).attr('href',url);
                 });
                 $( "#tutorialButton" ).click(function(){
@@ -56,6 +60,10 @@
                 });
                 $( "#operator_button" ).click(function(){
                     var url = site_url + "operator";
+                    $(location).attr('href',url);
+                });
+                $( "#komunikasi_button" ).click(function(){
+                    var url = site_url + "komunikasi";
                     $(location).attr('href',url);
                 });
 	    		var skpdHover = false;
@@ -85,23 +93,7 @@
         </script>
         <title><?php echo $title;?></title>
     </head>
-    <body>    	
-    <?php if ($userlevel == "operator") {?>
-	    	<div id="addTicketWrapper" 
-		    		style="position:absolute;left:1.5em;top: 15.5em;z-index: 201;
-		    		background-color: white;border: 1px solid #8ac;
-		    		box-shadow: 0.25em 0.25em 0.25em #666;
-		    		border-radius:0.25em;
-	    		">
-	    		<div id="addTicketDragger" style="background-color: #ace;height: 1.25em;cursor: move;"></div>
-	    		<button id="addTicket" style="margin: 0.5em;">Add Ticket</button>    		
-	    	</div>
-	    	<script>
-		    	$("#addTicket").click(function(){
-		    		window.open(site_url + "operator/add_ticket",  "MsgWindow", "dialog=yes, width=475, height=425");
-	    		});
-	    		$("#addTicketWrapper").draggable();
-	    	</script><?php };?>
+    <body>
             <div class="header">
             	<div class="header-top">
 	            	<span><img alt="" src="<?php echo site_url('images/logo.png');?>" style="width: 3em;height: 3em;left:8em;position: absolute;"/></span>
@@ -156,28 +148,17 @@
 	                </div>
                 </div>
                 <div class="nav-bar">
-                    <?php
-                        if ($page == "index") {
-                            //
-                        }
-                    ?>
                     <ul>
+                    <?php 
+                    if ($userlevel == 'member' || $userlevel == 'guest') {
+                    ?>
                     <li id="home_button" class="<?php echo ($page == "index"? "nav-button-selected":"nav-button");?>">Home</li>
+                    <?php };?>
                     <li id="tutorialButton" class="<?php echo ($page == "tutorial"? "nav-button-selected":"nav-button");?>">Tutorial</li>
-                    <li id="SKPD_button" class="<?php echo ($page == "SKPD"? "nav-button-selected":"nav-button");?>" style="width:8em;">Layanan SKPD
-                    	<div id="skpd-navbar" hidden="true" class="navbar2">
-                    	<ul style="display: inline;" >
-				    	<?php 
-				    		echo "<li class='navbar2-block'>" . anchor("", "Pendahuluan SKPD") . "</li>";
-				    		echo "<li class='navbar2-block'>" . anchor("", "Dasar Teori SKPD") . "</li>";
-				    		echo "<li class='navbar2-block'>" . anchor("", "Penutup SKPD") . "</li>";
-				    	?>
-				    	</ul>
-				    	</div>     
+                    <li id="komunikasi_button" class="<?php echo ($page == "komunikasi"? "nav-button-selected":"nav-button");?>" style="width:8em;">Hubungi Kami 
                     </li>
-                    <li class="nav-button">FAQ</li>
-                    	<li id="operator_button" class="<?php echo ($page == "operator"? "nav-button-selected":"nav-button");?>">Administrator</li>                    
-                    </ul>
+                    <li id="faq_button" class="<?php echo ($page == "faq"? "nav-button-selected":"nav-button");?>" style="width:8em;">FAQ 
+                    </li>
                 </div>
             </div>
         <div id="content" class="content">

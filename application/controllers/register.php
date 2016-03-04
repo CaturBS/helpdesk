@@ -11,7 +11,7 @@
  *
  * @author IT
  */
-class Register extends CI_Controller{
+class Register extends Help_Desk_Controller{
     private $data = null;
     public function __construct() {
         parent::__construct();
@@ -19,6 +19,7 @@ class Register extends CI_Controller{
         $this->data['author']="Catur Budi Santoso mail: ctrbudisantoso@gmail.com"; 
         $this->data['username']="guest";
         $this->data['userlevel']="guest";
+        $this->data['page'] = "";
         $this->load->model('UserLoginModel');
     }
     
